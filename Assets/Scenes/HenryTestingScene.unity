@@ -288,7 +288,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 620266329}
-  - component: {fileID: 620266328}
   m_Layer: 0
   m_Name: RotatableObject
   m_TagString: Untagged
@@ -296,19 +295,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &620266328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620266327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa4dec3378dc554ba13d69921cd1eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotatableObject
-  _sensitivity: 0.3
 --- !u!4 &620266329
 Transform:
   m_ObjectHideFlags: 0
@@ -322,104 +308,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 816507566}
+  - {fileID: 1658291795}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &620266330
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620266327}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &816507565
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 620266329}
-    m_Modifications:
-    - target: {fileID: 3460533769896495082, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_Name
-      value: HandheldRadio
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
---- !u!4 &816507566 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4273240454954016080, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-  m_PrefabInstance: {fileID: 816507565}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &833168625
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,8 +391,8 @@ Camera:
   m_GameObject: {fileID: 833168625}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.06317356, g: 0.09927272, b: 0.156, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -690,8 +581,8 @@ GameObject:
   - component: {fileID: 1658291794}
   - component: {fileID: 1658291793}
   - component: {fileID: 1658291792}
-  - component: {fileID: 1658291796}
   - component: {fileID: 1658291797}
+  - component: {fileID: 1658291798}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -793,19 +684,6 @@ Transform:
   - {fileID: 1761335497}
   m_Father: {fileID: 620266329}
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!114 &1658291796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658291791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c6081cbcf49af44957d12de82a2f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bomb
-  rotationDuration: 0.25
 --- !u!114 &1658291797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,6 +697,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
   bombCountDownLength: 60
+--- !u!114 &1658291798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658291791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa4dec3378dc554ba13d69921cd1eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatableObject
+  _sensitivity: 0.3
 --- !u!1 &1761335496
 GameObject:
   m_ObjectHideFlags: 0
