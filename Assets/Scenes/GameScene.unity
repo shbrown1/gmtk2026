@@ -288,7 +288,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 620266329}
-  - component: {fileID: 620266328}
   m_Layer: 0
   m_Name: RotatableObject
   m_TagString: Untagged
@@ -296,18 +295,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &620266328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620266327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa4dec3378dc554ba13d69921cd1eb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotatableObject
 --- !u!4 &620266329
 Transform:
   m_ObjectHideFlags: 0
@@ -594,8 +581,8 @@ GameObject:
   - component: {fileID: 1658291794}
   - component: {fileID: 1658291793}
   - component: {fileID: 1658291792}
-  - component: {fileID: 1658291796}
   - component: {fileID: 1658291797}
+  - component: {fileID: 1658291798}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -697,19 +684,6 @@ Transform:
   - {fileID: 1761335497}
   m_Father: {fileID: 620266329}
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!114 &1658291796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658291791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c6081cbcf49af44957d12de82a2f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bomb
-  rotationDuration: 0.25
 --- !u!114 &1658291797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +697,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
   bombCountDownLength: 60
+--- !u!114 &1658291798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658291791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa4dec3378dc554ba13d69921cd1eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatableObject
+  _sensitivity: 0.3
 --- !u!1 &1761335496
 GameObject:
   m_ObjectHideFlags: 0
