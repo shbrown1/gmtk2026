@@ -412,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08e2d6ead36b6f45b21f3d89651f91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  _timerEnabled: 1
 --- !u!4 &1242631599
 Transform:
   m_ObjectHideFlags: 0
@@ -567,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf871dcc88ec1c4ab78c5c0f6ba0141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
+  bombCountDownLength: 60
 --- !u!1 &1761335496
 GameObject:
   m_ObjectHideFlags: 0

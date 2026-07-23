@@ -3,7 +3,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     //for debugging/development
-    public readonly bool timerEnabled = false;
+    //this setup lets you set the _value in the editor while the public value remains readonly
+    [SerializeField] private bool _timerEnabled;
+    public bool timerEnabled => _timerEnabled;
 
     public static GameController instance;
 
