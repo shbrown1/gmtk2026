@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// I cut alot of this out and put it in the Draggable class.
 public class FillerObject : MonoBehaviour, IDraggable
 {
     [SerializeField] private string fillerType = "Default";
