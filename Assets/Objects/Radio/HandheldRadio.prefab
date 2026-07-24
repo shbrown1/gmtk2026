@@ -918,6 +918,8 @@ GameObject:
   - component: {fileID: 1605835888416262291}
   - component: {fileID: 993620250679002079}
   - component: {fileID: 450931341379574705}
+  - component: {fileID: 4274732397318267854}
+  - component: {fileID: 6960224637189183342}
   m_Layer: 0
   m_Name: Dial1
   m_TagString: Untagged
@@ -997,6 +999,42 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4274732397318267854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584774728158379577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a34481ad8fc83442bff3c8ceae53fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatableKnob
+  useLimits: 1
+  minAngle: -135
+  maxAngle: 135
+--- !u!65 &6960224637189183342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584774728158379577}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.006069198, y: 0.006069198, z: 0.0022179794}
+  m_Center: {x: -4.656613e-10, y: 2.1827873e-11, z: -0.0000000018626451}
 --- !u!1 &3802691818876052307
 GameObject:
   m_ObjectHideFlags: 0
