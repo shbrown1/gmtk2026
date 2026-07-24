@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RemovableObject : MonoBehaviour, IClickable
 {
     [SerializeField] private Transform bigObject; // assign in Inspector, or auto-found in Awake
     [SerializeField] private float moveDistance = 3f;
     [SerializeField] private float moveDuration = 0.25f;
+    [SerializeField] private bool rotateInsteadOfMove;
+    [SerializeField] private float rotationAmount = 90f;
 
     private bool _isRemoved = false;
     private bool isAnimating = false;
 
     private Vector3 restingLocalPos;
     private Vector3 poppedLocalPos;
+    private Quaternion restingLocalRot;
+    private Quaternion poppedLocalRot;
     private Coroutine moveRoutine;
 
     private void Awake()
@@ -24,6 +29,13 @@ public class RemovableObject : MonoBehaviour, IClickable
     private void Start()
     {
         restingLocalPos = transform.localPosition;
+        restingLocalRot = transform.localRotation;
+
+        if (rotateInsteadOfMove)
+        {
+            poppedLocalRot = Quaternion.Euler(restingLocalRot.eulerAngles + new Vector3(rotationAmount, 0f, 0f));
+            return;
+        }
 
         if (bigObject == null)
         {
@@ -59,13 +71,27 @@ public class RemovableObject : MonoBehaviour, IClickable
             }
         }
 
-        Vector3 target = _isRemoved ? restingLocalPos : poppedLocalPos;
-        transform.localScale = _isRemoved ?  new Vector3(1f, 1f, 1f) : new Vector3(1.2f, 1.2f, 1.2f);
-        _isRemoved = !_isRemoved;
+        if (rotateInsteadOfMove)
+        {
+            Quaternion targetRot = _isRemoved ? restingLocalRot : poppedLocalRot;
+            transform.localScale = _isRemoved ? new Vector3(1f, 1f, 1f) : new Vector3(1.2f, 1.2f, 1.2f);
+            _isRemoved = !_isRemoved;
 
-        if (moveRoutine != null) StopCoroutine(moveRoutine);
-        moveRoutine = StartCoroutine(MoveTo(target));
+            if (moveRoutine != null) StopCoroutine(moveRoutine);
+            moveRoutine = StartCoroutine(RotateTo(targetRot));
+        }
+        else
+        {
+            Vector3 target = _isRemoved ? restingLocalPos : poppedLocalPos;
+            transform.localScale = _isRemoved ?  new Vector3(1f, 1f, 1f) : new Vector3(1.2f, 1.2f, 1.2f);
+            _isRemoved = !_isRemoved;
+
+            if (moveRoutine != null) StopCoroutine(moveRoutine);
+            moveRoutine = StartCoroutine(MoveTo(target));
+        }
     }
+
+        
 
     private IEnumerator MoveTo(Vector3 targetLocalPos)
     {
@@ -82,6 +108,24 @@ public class RemovableObject : MonoBehaviour, IClickable
         }
 
         transform.localPosition = targetLocalPos;
+        isAnimating = false;
+    }
+
+    private IEnumerator RotateTo(Quaternion targetLocalRot)
+    {
+        isAnimating = true;
+        Quaternion start = transform.localRotation;
+        float t = 0f;
+
+        while (t < moveDuration)
+        {
+            t += Time.deltaTime;
+            float pct = Mathf.SmoothStep(0f, 1f, t / moveDuration);
+            transform.localRotation = Quaternion.Lerp(start, targetLocalRot, pct);
+            yield return null;
+        }
+
+        transform.localRotation = targetLocalRot;
         isAnimating = false;
     }
 

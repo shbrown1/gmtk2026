@@ -119,6 +119,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &378852215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3584774728158379577, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+  m_PrefabInstance: {fileID: 816507565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &378852219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378852215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a34481ad8fc83442bff3c8ceae53fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatableKnob
+  useLimits: 1
+  minAngle: -135
+  maxAngle: 135
+--- !u!114 &378852220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378852215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
+  highlightColor: {r: 0.015686274, g: 0.25943258, b: 1, a: 1}
+--- !u!65 &378852221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378852215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.006069198, y: 0.006069198, z: 0.0022179794}
+  m_Center: {x: -4.656613e-10, y: 2.1827873e-11, z: -0.0000000018626451}
 --- !u!1 &434719623
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,13 +423,63 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1080796542737942, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816507568}
+    - targetCorrespondingSourceObject: {fileID: 1080796542737942, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816507572}
+    - targetCorrespondingSourceObject: {fileID: 3584774728158379577, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 378852219}
+    - targetCorrespondingSourceObject: {fileID: 3584774728158379577, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 378852220}
+    - targetCorrespondingSourceObject: {fileID: 3584774728158379577, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 378852221}
   m_SourcePrefab: {fileID: 100100000, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
 --- !u!4 &816507566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8161412651278964458, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
   m_PrefabInstance: {fileID: 816507565}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &816507567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1080796542737942, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+  m_PrefabInstance: {fileID: 816507565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &816507568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816507567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa406712c6f2fcb49bc7803c09b8ed82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RemovableObject
+  bigObject: {fileID: 0}
+  moveDistance: 3
+  moveDuration: 0.25
+  rotateInsteadOfMove: 0
+  rotationAmount: 90
+--- !u!114 &816507572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816507567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &833168625
 GameObject:
   m_ObjectHideFlags: 0
