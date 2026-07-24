@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class CassetteHolderClickble : MonoBehaviour, IClickable
+public class CassetteHolderClickable : MonoBehaviour, IClickable
 {
     [SerializeField] private float animationTime = 0.3f;
     [SerializeField] private AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
-    [SerializeField] private Vector3 openLocalEuler;
+    [SerializeField] private Vector3 openLocalEuler = new Vector3(40f, 0f, 0f);
     [SerializeField] private AudioClip openSound;
 
     private Vector3 _closedLocalEuler;

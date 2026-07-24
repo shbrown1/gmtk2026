@@ -434,7 +434,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  openLocalEuler: {x: 0, y: 0, z: 0}
+  openLocalEuler: {x: 40, y: 0, z: 0}
   openSound: {fileID: 8300000, guid: b46be19c7f5731841a4a6d50343de5aa, type: 3}
 --- !u!1 &5460643462570086859
 GameObject:
@@ -735,7 +735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8793552309111802960}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
