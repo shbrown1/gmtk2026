@@ -60,7 +60,7 @@ public class RemovableObject : MonoBehaviour, IClickable
         }
 
         Vector3 target = _isRemoved ? restingLocalPos : poppedLocalPos;
-        transform.localScale = _isRemoved ?  new Vector3(1f, 1f, 1f) : new Vector3(1.2f, 1.2f, 1.2f);
+        transform.localScale *= _isRemoved ? (1 / 1.2f) : 1.2f; // Scale down when popping out, scale up when returning
         _isRemoved = !_isRemoved;
 
         if (moveRoutine != null) StopCoroutine(moveRoutine);
