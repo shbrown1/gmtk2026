@@ -1,15 +1,39 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
     private BombCountdown bombCountdown;
+    private readonly List<IPuzzle> puzzles = new();
     [SerializeField] private int bombCountDownLength;
+    [SerializeField] private List<MonoBehaviour> puzzleObjects = new();
 
     void Start()
     {
-        //trying to set this up where all the elements of the bomb are controlled from the bomb object, and then passed down, maybe this is a bad design decision but idk
-        //The idea is you can just create a bomb object in the editor and configure it from there, then it passes info into child objects/puzzles, easier for building a bunch of levels ideally
         bombCountdown = GetComponentInChildren<BombCountdown>();
         bombCountdown.Init(bombCountDownLength);
+
+        puzzles.Clear();
+
+        foreach (var puz in puzzleObjects)
+        {
+            if (puz is IPuzzle puzzle)
+            {
+                puzzles.Add(puzzle);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (puzzles.Count > 0 && puzzles.TrueForAll(p => p.IsSolved))
+        {
+            DefuseBomb();
+        }
+    }
+
+    private void DefuseBomb()
+    {
+        Debug.Log("BOMB DEFUSED!");
     }
 }
