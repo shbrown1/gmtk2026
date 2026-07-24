@@ -10,6 +10,7 @@ public class RemovableObject : MonoBehaviour, IClickable
     [SerializeField] private float moveDuration = 0.25f;
     [SerializeField] private bool rotateInsteadOfMove;
     [SerializeField] private float rotationAmount = 90f;
+    [SerializeField] private AudioClip onActivateClip;
 
     private bool _isRemoved = false;
     private bool isAnimating = false;
@@ -89,6 +90,8 @@ public class RemovableObject : MonoBehaviour, IClickable
             if (moveRoutine != null) StopCoroutine(moveRoutine);
             moveRoutine = StartCoroutine(MoveTo(target));
         }
+
+        if (onActivateClip is not null) AudioController.instance.PlaySound(onActivateClip);
     }
 
         

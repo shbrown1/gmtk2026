@@ -112,6 +112,7 @@ MonoBehaviour:
   moveDuration: 0.25
   rotateInsteadOfMove: 0
   rotationAmount: 90
+  onActivateClip: {fileID: 0}
 --- !u!114 &3484187836115226109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +508,7 @@ MonoBehaviour:
   acceptedType: Battery1
   slotTransform: {fileID: 2977363189753331996}
   catchRadius: 1.5
+  soundEffect: {fileID: 8300000, guid: f539c237462071146a6042604efce490, type: 3}
 --- !u!1 &1535062366692311360
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +653,7 @@ MonoBehaviour:
   moveDuration: 0.25
   rotateInsteadOfMove: 0
   rotationAmount: 90
+  onActivateClip: {fileID: 8300000, guid: 42107b84bf6c25547b848e571c8f0428, type: 3}
 --- !u!1 &2124944080146653411
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +702,7 @@ MonoBehaviour:
   acceptedType: Battery2
   slotTransform: {fileID: 9178485639765989016}
   catchRadius: 1.5
+  soundEffect: {fileID: 8300000, guid: f539c237462071146a6042604efce490, type: 3}
 --- !u!1 &3348012144294080802
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +847,7 @@ MonoBehaviour:
   moveDuration: 0.25
   rotateInsteadOfMove: 0
   rotationAmount: 90
+  onActivateClip: {fileID: 8300000, guid: 42107b84bf6c25547b848e571c8f0428, type: 3}
 --- !u!1 &3360898533528619063
 GameObject:
   m_ObjectHideFlags: 0
