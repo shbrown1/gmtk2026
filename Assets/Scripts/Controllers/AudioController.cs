@@ -10,8 +10,8 @@ public class AudioController : MonoBehaviour
         instance = this;
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioClip clip, float volume = 1f)
     {
-        source.PlayOneShot(clip);
+        source.PlayOneShot(clip, volume);
     }
 }

@@ -28,7 +28,7 @@ public class CassetteHolderClickable : MonoBehaviour, IClickable
         if (_rotateRoutine != null) StopCoroutine(_rotateRoutine);
         _rotateRoutine = StartCoroutine(RotateTo(target));
 
-        AudioController.instance.PlaySound(openSound);
+        AudioController.instance.PlaySound(openSound, .2f);
     }
 
     private IEnumerator RotateTo(Vector3 target)
