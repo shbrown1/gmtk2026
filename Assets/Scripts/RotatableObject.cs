@@ -20,11 +20,11 @@ public class RotatableObject : MonoBehaviour
         Mouse mouse = Mouse.current;
         if (mouse == null) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             TryBeginDrag(mouse);
         }
-        else if (_isDragging && mouse.leftButton.isPressed)
+        else if (_isDragging && mouse.rightButton.isPressed)
             ApplyRotation(mouse.delta.ReadValue());
         else if (_isDragging)
             _isDragging = false;

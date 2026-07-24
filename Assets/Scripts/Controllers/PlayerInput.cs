@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
             }
 
             // Handle Click Check
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 IClickable clickObj = hit.collider.GetComponent<IClickable>();
                 clickObj?.OnClick();

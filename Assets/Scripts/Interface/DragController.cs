@@ -11,15 +11,15 @@ public class DragController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             TryBeginDrag();
         }
-        else if (currentDragging != null && Input.GetMouseButton(1))
+        else if (currentDragging != null && Input.GetMouseButton(0))
         {
             currentDragging.UpdateDrag(Input.mousePosition);
         }
-        else if (currentDragging != null && Input.GetMouseButtonUp(1))
+        else if (currentDragging != null && Input.GetMouseButtonUp(0))
         {
             currentDragging.EndDrag();
             currentDragging = null;
