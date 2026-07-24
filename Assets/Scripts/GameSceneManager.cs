@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -9,11 +11,17 @@ public class GameSceneManager : MonoBehaviour
 
     Camera _cam;
     GameObject _overlay;
+    Vignette _vignette;
+    float _originalVignetteIntensity;
 
     void Awake()
     {
         _cam = Camera.main;
         CreateOverlay();
+
+        var volume = FindFirstObjectByType<Volume>();
+        if (volume != null && volume.profile.TryGet(out _vignette))
+            _originalVignetteIntensity = _vignette.intensity.value;
     }
 
     void Start()
@@ -52,5 +60,25 @@ public class GameSceneManager : MonoBehaviour
 
         AudioController.instance.PlaySound(_lightSwitchSound, 0.5f);
         AudioController.instance.PlayBackgroundMusic(_officeAmbience, 0.5f);
+
+        if (_vignette != null)
+            StartCoroutine(AdjustVignette());
+    }
+
+    IEnumerator AdjustVignette()
+    {
+        float adjustDuration = .08f;
+        float elapsed = 0f;
+
+        _vignette.intensity.value = 0.85f;
+
+        while (elapsed < adjustDuration)
+        {
+            elapsed += Time.deltaTime;
+            _vignette.intensity.value = Mathf.Lerp(0.85f, _originalVignetteIntensity, elapsed / adjustDuration);
+            yield return null;
+        }
+
+        _vignette.intensity.value = _originalVignetteIntensity;
     }
 }
