@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9dbe5e8d80ef8b4f93a150dbfc07254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameSceneManager
+  _blackScreenDuration: 3
+  _lightSwitchSound: {fileID: 0}
+  _officeAmbience: {fileID: 0}
 --- !u!4 &130514769
 Transform:
   m_ObjectHideFlags: 0

@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4610344e6d9017479441438b5801993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleScreenManager
+  ClickToStartText: {fileID: 1067606059}
 --- !u!4 &1665266337
 Transform:
   m_ObjectHideFlags: 0
