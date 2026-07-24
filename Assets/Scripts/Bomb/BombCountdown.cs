@@ -36,7 +36,16 @@ public class BombCountdown : MonoBehaviour
                 isTimerRunning = false;
                 OnTimerFinish();
             }
+        } 
+        else
+        {
+            countdownText.color = Color.green;
         }
+    }
+
+    public void DefuseBomb()
+    {
+        isTimerRunning = false;
     }
 
     private void DisplayTime()
