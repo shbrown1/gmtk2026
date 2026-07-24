@@ -5,7 +5,7 @@ public class DragController : MonoBehaviour
     [SerializeField] private LayerMask fillerLayerMask = ~0;
 
     private Camera cam;
-    private FillerObject currentDragging;
+    private IDraggable[] currentDragging;
 
     private void Awake() => cam = Camera.main;
 
@@ -17,11 +17,11 @@ public class DragController : MonoBehaviour
         }
         else if (currentDragging != null && Input.GetMouseButton(0))
         {
-            currentDragging.UpdateDrag(Input.mousePosition);
+            foreach (var d in currentDragging) d.UpdateDrag(Input.mousePosition);
         }
         else if (currentDragging != null && Input.GetMouseButtonUp(0))
         {
-            currentDragging.EndDrag();
+            foreach (var d in currentDragging) d.EndDrag();
             currentDragging = null;
         }
     }
@@ -31,13 +31,11 @@ public class DragController : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, fillerLayerMask))
         {
-            Debug.Log($"Raycast hit: {hit.collider.gameObject.name}");
-            FillerObject filler = hit.collider.GetComponent<FillerObject>();
-            if (filler != null)
+            IDraggable[] draggables = hit.collider.GetComponents<IDraggable>();
+            if (draggables.Length > 0)
             {
-                Debug.Log($"Begin dragging {filler.name}");
-                currentDragging = filler;
-                filler.BeginDrag();
+                currentDragging = draggables;
+                foreach (var d in draggables) d.BeginDrag();
             }
         }
     }

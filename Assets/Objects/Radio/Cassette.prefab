@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.60422
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.549
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,28 +70,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9156906494813875270}
+      addedObject: {fileID: 1353512741401306524}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1353512741401306524}
+      addedObject: {fileID: 7092704455144006307}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7368107921398092557}
   m_SourcePrefab: {fileID: 100100000, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
 --- !u!1 &5787878876830743276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
   m_PrefabInstance: {fileID: 6670892066865055677}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9156906494813875270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5787878876830743276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb3acd92eb229641a3e3aa2cb79ffce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SnapToPositionAfterDrag
 --- !u!114 &1353512741401306524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,3 +95,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129ea34d36f0b4d43a133b67a1ab6660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CassetteTape
+--- !u!114 &7092704455144006307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787878876830743276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5d06538f56f1549b2764b71fa32af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Draggable
+  _snapDuration: 0.15
+  _homePosition: {x: 0, y: 0, z: 0}
+--- !u!65 &7368107921398092557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787878876830743276}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.58411, y: 0.29617736, z: 2.07305}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}

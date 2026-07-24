@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class FillerObject : MonoBehaviour
+public class FillerObject : MonoBehaviour, IDraggable
 {
     [SerializeField] private string fillerType = "Default";
     [SerializeField] private float snapDuration = 0.15f;
