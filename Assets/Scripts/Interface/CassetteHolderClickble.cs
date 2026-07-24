@@ -6,6 +6,7 @@ public class CassetteHolderClickble : MonoBehaviour, IClickable
     [SerializeField] private float animationTime = 0.3f;
     [SerializeField] private AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private Vector3 openLocalEuler;
+    [SerializeField] private AudioClip openSound;
 
     private Vector3 _closedLocalEuler;
     private bool _isOpen;
@@ -26,6 +27,8 @@ public class CassetteHolderClickble : MonoBehaviour, IClickable
 
         if (_rotateRoutine != null) StopCoroutine(_rotateRoutine);
         _rotateRoutine = StartCoroutine(RotateTo(target));
+
+        AudioController.instance.PlaySound(openSound);
     }
 
     private IEnumerator RotateTo(Vector3 target)
