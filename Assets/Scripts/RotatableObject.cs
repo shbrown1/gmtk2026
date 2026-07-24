@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +21,9 @@ public class RotatableObject : MonoBehaviour
         if (mouse == null) return;
 
         if (Input.GetMouseButtonDown(0))
+        {
             TryBeginDrag(mouse);
+        }
         else if (_isDragging && mouse.leftButton.isPressed)
             ApplyRotation(mouse.delta.ReadValue());
         else if (_isDragging)
