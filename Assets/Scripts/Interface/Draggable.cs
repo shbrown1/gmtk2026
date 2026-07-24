@@ -5,7 +5,8 @@ public class Draggable : MonoBehaviour, IDraggable
 {
     [SerializeField] float _snapDuration = 0.15f;
 
-    public Vector3 _homePosition;
+    public Vector3 homePosition;
+    public Vector3 homeRotation;
     Plane _dragPlane;
     Camera _camera;
     Coroutine _snapRoutine;
@@ -13,12 +14,14 @@ public class Draggable : MonoBehaviour, IDraggable
     void Awake()
     {
         _camera = Camera.main;
+        homePosition = transform.position;
+        homeRotation = transform.eulerAngles;
     }
 
     public void BeginDrag()
     {
         if (_snapRoutine != null) { StopCoroutine(_snapRoutine); _snapRoutine = null; }
-        _dragPlane = new Plane(-_camera.transform.forward, transform.position);
+        _dragPlane = new Plane(Vector3.back, transform.position);
     }
 
     public void UpdateDrag(Vector2 screenPos)
@@ -35,14 +38,19 @@ public class Draggable : MonoBehaviour, IDraggable
 
     IEnumerator SnapHome()
     {
-        Vector3 start = transform.position;
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
+        Quaternion targetRot = Quaternion.Euler(homeRotation);
         float t = 0f;
         while (t < _snapDuration)
         {
             t += Time.deltaTime;
-            transform.position = Vector3.Lerp(start, _homePosition, Mathf.SmoothStep(0f, 1f, t / _snapDuration));
+            float s = Mathf.SmoothStep(0f, 1f, t / _snapDuration);
+            transform.position = Vector3.Lerp(startPos, homePosition, s);
+            transform.rotation = Quaternion.Slerp(startRot, targetRot, s);
             yield return null;
         }
-        transform.position = _homePosition;
+        transform.position = homePosition;
+        transform.rotation = targetRot;
     }
 }

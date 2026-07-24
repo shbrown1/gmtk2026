@@ -9,16 +9,21 @@ public class RotatableObject : MonoBehaviour
 
     private Camera _camera;
     private bool _isDragging;
+    private Quaternion _homeRotation;
 
     private void Start()
     {
         _camera = Camera.main;
+        _homeRotation = transform.rotation;
     }
 
     private void Update()
     {
         Mouse mouse = Mouse.current;
         if (mouse == null) return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            transform.rotation = _homeRotation;
 
         if (Input.GetMouseButtonDown(1))
         {

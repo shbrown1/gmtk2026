@@ -107,9 +107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa406712c6f2fcb49bc7803c09b8ed82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RemovableObject
-  bigObject: {fileID: 8161412651278964458}
+  bigObject: {fileID: 0}
   moveDistance: 1
   moveDuration: 0.25
+  rotateInsteadOfMove: 0
+  rotationAmount: 90
 --- !u!114 &3484187836115226109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +428,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FillerObject
   fillerType: Battery2
   snapDuration: 0.15
+--- !u!1 &1114621858811338032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3136902635692164114}
+  m_Layer: 0
+  m_Name: CassettePlacementPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3136902635692164114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114621858811338032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.00289, z: 0.0165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5026403539716564304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262081616822936275
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +649,8 @@ MonoBehaviour:
   bigObject: {fileID: 8161412651278964458}
   moveDistance: 0.005
   moveDuration: 0.25
+  rotateInsteadOfMove: 0
+  rotationAmount: 90
 --- !u!1 &2124944080146653411
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +841,8 @@ MonoBehaviour:
   bigObject: {fileID: 8161412651278964458}
   moveDistance: 0.005
   moveDuration: 0.25
+  rotateInsteadOfMove: 0
+  rotationAmount: 90
 --- !u!1 &3360898533528619063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,11 +1052,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3802691818876052307}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.008726624, y: -0.0074818013, z: -0.007528561}
   m_LocalScale: {x: 1.1268417, y: 1, z: 1.1949216}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3136902635692164114}
   m_Father: {fileID: 5172668567670874348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2001967112766799905
@@ -1152,6 +1190,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   openLocalEuler: {x: 40, y: 0, z: 0}
   openSound: {fileID: 8300000, guid: b46be19c7f5731841a4a6d50343de5aa, type: 3}
+  cassettePlacementTransform: {fileID: 3136902635692164114}
 --- !u!1 &5460643462570086859
 GameObject:
   m_ObjectHideFlags: 0
