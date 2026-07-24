@@ -31,7 +31,7 @@ public class DragController : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, fillerLayerMask))
         {
-            IDraggable[] draggables = hit.collider.GetComponents<IDraggable>();
+            IDraggable[] draggables = hit.collider.GetComponentsInParent<IDraggable>();
             if (draggables.Length > 0)
             {
                 currentDragging = draggables;

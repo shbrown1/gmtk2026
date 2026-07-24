@@ -10,55 +10,55 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.60422
+      value: -3.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.549
+      value: -4.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7812012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.3923057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.3115203
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.37252656
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -38.447
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -84.081
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -132.045
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 603b557d8327f8048bf74d8592d10bc4, type: 3}
       propertyPath: m_Name
@@ -95,6 +95,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129ea34d36f0b4d43a133b67a1ab6660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CassetteTape
+  _alignRadius: 5
+  _fullAlignDistance: 1.5
+  _insertDuration: 0.8
+  _insertCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7092704455144006307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Draggable
   _snapDuration: 0.15
-  _homePosition: {x: 0, y: 0, z: 0}
+  homePosition: {x: 0, y: 0, z: 0}
+  homeRotation: {x: 0, y: 0, z: 0}
 --- !u!65 &7368107921398092557
 BoxCollider:
   m_ObjectHideFlags: 0
