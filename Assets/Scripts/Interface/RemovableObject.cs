@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class RemovableObject : MonoBehaviour, IClickable
@@ -7,7 +8,7 @@ public class RemovableObject : MonoBehaviour, IClickable
     [SerializeField] private float moveDistance = 3f;
     [SerializeField] private float moveDuration = 0.25f;
 
-    private bool isRemoved = false;
+    private bool _isRemoved = false;
     private bool isAnimating = false;
 
     private Vector3 restingLocalPos;
@@ -47,9 +48,20 @@ public class RemovableObject : MonoBehaviour, IClickable
     {
         if (isAnimating) return;
 
-        Vector3 target = isRemoved ? restingLocalPos : poppedLocalPos;
-        transform.localScale = isRemoved ?  new Vector3(1f, 1f, 1f) : new Vector3(1.2f, 1.2f, 1.2f);
-        isRemoved = !isRemoved;
+        RemovableObject[] removableChildren = GetComponentsInChildren<RemovableObject>().Where(comp => comp.gameObject != this.gameObject).ToArray();
+
+        if (removableChildren.Length > 0)
+        {
+            // Checks children to ensure they've been removed
+            foreach (RemovableObject child in removableChildren)
+            {
+                if (!child.IsRemoved) return;
+            }
+        }
+
+        Vector3 target = _isRemoved ? restingLocalPos : poppedLocalPos;
+        transform.localScale = _isRemoved ?  new Vector3(1f, 1f, 1f) : new Vector3(1.2f, 1.2f, 1.2f);
+        _isRemoved = !_isRemoved;
 
         if (moveRoutine != null) StopCoroutine(moveRoutine);
         moveRoutine = StartCoroutine(MoveTo(target));
@@ -72,4 +84,6 @@ public class RemovableObject : MonoBehaviour, IClickable
         transform.localPosition = targetLocalPos;
         isAnimating = false;
     }
+
+    public bool IsRemoved { get { return _isRemoved; } }
 }
