@@ -297,7 +297,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -791,10 +791,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4779605986546546527, guid: 6292325233d46694b8ccc7e547a381ec, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2063109499}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6292325233d46694b8ccc7e547a381ec, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
