@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7490839845443425162}
   - component: {fileID: 9092279643020821067}
   - component: {fileID: 3334313597320592734}
-  - component: {fileID: 1716424485231085877}
   - component: {fileID: 3484187836115226109}
   - component: {fileID: 7357996641612826081}
+  - component: {fileID: 2279149815474878751}
   m_Layer: 0
   m_Name: BatteryPanel
   m_TagString: Untagged
@@ -95,24 +95,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1716424485231085877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080796542737942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa406712c6f2fcb49bc7803c09b8ed82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RemovableObject
-  bigObject: {fileID: 0}
-  moveDistance: 1
-  moveDuration: 0.25
-  rotateInsteadOfMove: 0
-  rotationAmount: 90
-  onActivateClip: {fileID: 0}
 --- !u!114 &3484187836115226109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +129,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010241068, y: 0.0003961408, z: 0.00843105}
   m_Center: {x: -0.000018275809, y: 0.000033742668, z: -0.004210537}
+--- !u!114 &2279149815474878751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080796542737942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102a63af062f78b45a5ad1797844360e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BatteryFlapClickable
+  animationTime: 0.3
+  rotationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  openLocalEuler: {x: 90, y: 0, z: 0}
 --- !u!1 &432431509892523351
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 966483307215259153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.45, y: 0, z: 1.367}
   m_LocalScale: {x: 1.7200001, y: 1.6, z: 1.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
