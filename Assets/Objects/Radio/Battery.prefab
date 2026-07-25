@@ -22,43 +22,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.24
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.04
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.74
+      value: -4.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.47752222
+      value: -0.75254875
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.13621671
+      value: -0.09637428
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.84284496
+      value: 0.625061
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.20743664
+      value: -0.18352456
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -28.67
+      value: 21.992
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -121.458
+      value: 282.458
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 2.058
+      value: 9.67
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 172731853b0ff58418198b09417b2830, type: 3}
       propertyPath: m_Name
@@ -77,9 +77,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 172731853b0ff58418198b09417b2830, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7169977707700633726}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 172731853b0ff58418198b09417b2830, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6365569386043975959}
   m_SourcePrefab: {fileID: 100100000, guid: 172731853b0ff58418198b09417b2830, type: 3}
 --- !u!1 &6339685858994675163 stripped
 GameObject:
@@ -113,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cec8fae1c1fd84f8a54605adb72c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Battery
-  _alignRadius: 3
-  _fullAlignDistance: 2.5
+  _alignRadius: 3.2
+  _fullAlignDistance: 2.6
   _insertDuration: 0.4
   _insertCurve:
     serializedVersion: 2
@@ -140,6 +137,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _insertSound: {fileID: 8300000, guid: f4f410e396bcfde4c88af415855ba318, type: 3}
 --- !u!65 &7169977707700633726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -161,24 +159,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23604743, y: 0.23604742, z: 0.8231202}
   m_Center: {x: -0.00000023957944, y: -0.000000059846485, z: 0.025967803}
---- !u!65 &6365569386043975959
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6339685858994675163}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.23604749, y: 0.23604743, z: 0.8231205}
-  m_Center: {x: 7.7390805e-10, y: -0.00000012017667, z: 0.025967812}

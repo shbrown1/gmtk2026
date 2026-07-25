@@ -7,6 +7,7 @@ public class CassetteTape : MonoBehaviour, IDraggable
     [SerializeField] float _fullAlignDistance = 1.5f;
     [SerializeField] float _insertDuration = 0.4f;
     [SerializeField] AnimationCurve _insertCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+    [SerializeField] AudioClip _insertSound;
 
     CassetteHolderClickable _cassetteHolder;
     Quaternion _homeRotation;
@@ -56,10 +57,11 @@ public class CassetteTape : MonoBehaviour, IDraggable
     {
         _inserted = true;
 
+        if (_insertSound != null) AudioController.instance.PlaySound(_insertSound, .5f);
+
         Draggable draggable = GetComponent<Draggable>();
         if (draggable != null) Destroy(draggable);
 
-        Vector3 worldScale = transform.lossyScale;
         transform.SetParent(_cassetteHolder.cassettePlacementTransform);
         transform.localPosition = Vector3.zero;
         transform.localEulerAngles = Vector3.zero;

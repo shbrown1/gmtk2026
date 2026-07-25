@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CassetteTape
   _alignRadius: 5
   _fullAlignDistance: 1.5
-  _insertDuration: 0.8
+  _insertDuration: 1
   _insertCurve:
     serializedVersion: 2
     m_Curve:
@@ -122,6 +122,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _insertSound: {fileID: 8300000, guid: 78c11c34b800c954fb38898baf792ba9, type: 3}
 --- !u!114 &7092704455144006307
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Battery : MonoBehaviour, IDraggable
     [SerializeField] float _fullAlignDistance = 1.5f;
     [SerializeField] float _insertDuration = 0.4f;
     [SerializeField] AnimationCurve _insertCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+    [SerializeField] AudioClip _insertSound;
 
     BatteryFlapClickable _batteryFlap;
     Transform _targetSlot;
@@ -55,7 +56,6 @@ public class Battery : MonoBehaviour, IDraggable
         if (_targetSlot == null) return;
 
         float dist = Vector3.Distance(transform.position, _targetSlot.position);
-        Debug.Log($"Battery EndDrag: dist={dist}, _fullAlignDistance={_fullAlignDistance}");
         if (dist <= _fullAlignDistance)
             StartCoroutine(InsertBattery(_targetSlot));
     }
@@ -63,6 +63,9 @@ public class Battery : MonoBehaviour, IDraggable
     IEnumerator InsertBattery(Transform slot)
     {
         _inserted = true;
+
+        if (_insertSound != null)
+            AudioController.instance.PlaySound(_insertSound, .5f);
 
         if (_batteryFlap.battery1PlacementTransform == slot)
             _batteryFlap.battery1PlacementTransform = null;
@@ -77,18 +80,14 @@ public class Battery : MonoBehaviour, IDraggable
         transform.localEulerAngles = Vector3.zero;
 
         float elapsed = 0f;
-        Vector3 endLocalPos = Vector3.zero;
-        Vector3 startLocalPos = transform.localPosition;
-
+        Vector3 endLocalPos = new Vector3(-.4f, 0f, 0);
         while (elapsed < _insertDuration)
         {
             elapsed += Time.deltaTime;
             float t = _insertCurve.Evaluate(elapsed / _insertDuration);
-            transform.localPosition = Vector3.Lerp(startLocalPos, endLocalPos, t);
+            transform.localPosition = Vector3.Lerp(Vector3.zero, endLocalPos, t);
             yield return null;
         }
-
-        transform.localPosition = endLocalPos;
     }
 
     Transform NearestSlot()

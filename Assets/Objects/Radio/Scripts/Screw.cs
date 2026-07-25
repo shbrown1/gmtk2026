@@ -40,7 +40,7 @@ public class Screw : MonoBehaviour, IClickable
         moveRoutine = StartCoroutine(MoveTo(target, spinDir));
 
         if (onActivateClip != null)
-            AudioController.instance.PlaySound(onActivateClip, .2f);
+            AudioController.instance.PlaySound(onActivateClip, .5f);
     }
 
     private IEnumerator MoveTo(Vector3 targetLocalPos, float spinDir)

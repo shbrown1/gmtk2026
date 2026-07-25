@@ -7,6 +7,8 @@ public class BatteryFlapClickable : MonoBehaviour, IClickable
     [SerializeField] private float animationTime = 0.3f;
     [SerializeField] private AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private Vector3 openLocalEuler = new Vector3(160f, 0f, 0f);
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
 
     public Transform battery1PlacementTransform;
     public Transform battery2PlacementTransform;
@@ -41,6 +43,9 @@ public class BatteryFlapClickable : MonoBehaviour, IClickable
 
         if (_rotateRoutine != null) StopCoroutine(_rotateRoutine);
         _rotateRoutine = StartCoroutine(RotateTo(target));
+
+        AudioClip clip = _isOpen ? openSound : closeSound;
+        if (clip != null) AudioController.instance.PlaySound(clip, .5f);
     }
 
     private IEnumerator RotateTo(Quaternion target)
