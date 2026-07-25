@@ -7,12 +7,10 @@ public class TimerScript : MonoBehaviour
     private TMP_Text countdownText;
     private float timeRemaining;
     private bool isTimerRunning = false;
-    [SerializeField] private int countdownTime = 30;
 
     void Start()
     {
         countdownText = GetComponentInChildren<TMP_Text>();
-        Init(countdownTime);
     }
 
     public void Init(int seconds)
