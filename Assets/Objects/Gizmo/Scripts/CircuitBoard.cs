@@ -79,4 +79,6 @@ public class CircuitBoard : MonoBehaviour, IDraggable
 
         _holder.OnCircuitBoardInserted();
     }
+
+    public bool IsInserted => _inserted;
 }

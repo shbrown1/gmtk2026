@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CircuitBoard
   _alignRadius: 3
-  _fullAlignDistance: 2.5
-  _insertDuration: 2.6
+  _fullAlignDistance: 2.7
+  _insertDuration: 0.6
   _insertCurve:
     serializedVersion: 2
     m_Curve:
@@ -166,4 +166,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _insertSound: {fileID: 0}
+  _insertSound: {fileID: 8300000, guid: f4f410e396bcfde4c88af415855ba318, type: 3}

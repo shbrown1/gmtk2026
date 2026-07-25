@@ -27,6 +27,8 @@ public class Screw : MonoBehaviour, IClickable
     public void OnClick()
     {
         if (isAnimating) return;
+        if (GetComponentInParent<CircuitBoardFlapClickable>()?.IsOpen == true) return;
+        if (GetComponentInParent<BatteryFlapClickable>()?.IsOpen == true) return;
 
         Vector3 target = _isRemoved ? restingLocalPos : removedLocalOffset;
         // Scale down when popping out, scale up when returning  
