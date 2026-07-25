@@ -151,6 +151,7 @@ MonoBehaviour:
   _blackScreenDuration: 3
   _lightSwitchSound: {fileID: 8300000, guid: c67403d5596dcca4ba7fc4748b40fd6b, type: 3}
   _officeAmbience: {fileID: 8300000, guid: cab4bcb2a2af7b949ab24be097b88e2d, type: 3}
+  _music: {fileID: 8300000, guid: d849b49a4f777b74ca7f12197b86d599, type: 3}
 --- !u!4 &130514769
 Transform:
   m_ObjectHideFlags: 0
@@ -547,6 +548,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77f8e1bc4bbcbd42ab1c506a226471c, type: 3}
+--- !u!1 &2054205120 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3146510221933547551, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
+  m_PrefabInstance: {fileID: 979993975121113040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2054205123 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7008543578855206005, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
+  m_PrefabInstance: {fileID: 979993975121113040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054205126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054205120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda29d267f1a467469900b59bbf30dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearAudioSpeed
+  audioSource: {fileID: 2054205123}
+  audioMixer: {fileID: 24100000, guid: 225e7d98152d8c44da11c59b4b6c48e4, type: 2}
+  targetSpeed: 1
 --- !u!1001 &979993975121113040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,6 +621,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7008543578855206005, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008543578855206005, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 225e7d98152d8c44da11c59b4b6c48e4, type: 2}
     - target: {fileID: 8974502332372572794, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
       propertyPath: m_Name
       value: SceneMangers
@@ -602,7 +636,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3146510221933547551, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2054205126}
   m_SourcePrefab: {fileID: 100100000, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
 --- !u!1001 &4525389220628871236
 PrefabInstance:

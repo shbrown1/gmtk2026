@@ -13,6 +13,8 @@ public class CassetteTape : MonoBehaviour, IDraggable
     Quaternion _homeRotation;
     bool _inserted;
 
+    public static bool IsInserted;
+
     void Awake()
     {
         _cassetteHolder = FindFirstObjectByType<CassetteHolderClickable>();
@@ -21,6 +23,7 @@ public class CassetteTape : MonoBehaviour, IDraggable
     void Start()
     {
         _homeRotation = transform.rotation;
+        IsInserted = false;
     }
 
     public void BeginDrag()
@@ -75,5 +78,7 @@ public class CassetteTape : MonoBehaviour, IDraggable
             transform.localPosition = Vector3.Lerp(Vector3.zero, endLocalPos, t);
             yield return null;
         }
+
+        GameSceneManager.instance.PlayMusic();
     }
 }
