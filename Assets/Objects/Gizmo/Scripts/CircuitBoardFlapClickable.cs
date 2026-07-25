@@ -10,8 +10,7 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip closeSound;
 
-    public Transform battery1PlacementTransform;
-    public Transform battery2PlacementTransform;
+    public Transform circuitBoardPlacementTransform;
 
     private Quaternion _closedLocalRot;
     private Quaternion _openLocalRot;
@@ -67,4 +66,9 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
     }
 
     public bool IsOpen => _isOpen;
+
+    public void OnCircuitBoardInserted()
+    {
+        Debug.Log("Circuit board inserted!");
+    }
 }

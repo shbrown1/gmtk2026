@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.23
+      value: 2.913
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -1.928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.12
+      value: -3.809
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -82,6 +82,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2200120826601533563}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3078390193016178089}
   m_SourcePrefab: {fileID: 100100000, guid: baaa2436fdec12245a049b84b2df785c, type: 3}
 --- !u!1 &2155495383890521124 stripped
 GameObject:
@@ -124,3 +127,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3212428, y: 0.022191439, z: 0.656768}
   m_Center: {x: -0.00000008940697, y: -4.440892e-16, z: 3.996803e-15}
+--- !u!114 &3078390193016178089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155495383890521124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519f8a833da903641b800535f91a36de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CircuitBoard
+  _alignRadius: 3
+  _fullAlignDistance: 2.5
+  _insertDuration: 2.6
+  _insertCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _insertSound: {fileID: 0}
