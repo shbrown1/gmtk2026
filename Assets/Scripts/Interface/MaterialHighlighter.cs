@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Renderer))]
 public class MaterialHighlighter : MonoBehaviour, IHoverable
 {
-    [SerializeField] private Color highlightColor = Color.yellow;
+    [SerializeField] private float brightnessBoost = 0.3f;
 
     private Renderer objectRenderer;
     private Color originalColor;
@@ -16,12 +16,11 @@ public class MaterialHighlighter : MonoBehaviour, IHoverable
 
     public void OnHoverEnter()
     {
-        objectRenderer.material.color = highlightColor;
+        objectRenderer.material.color = originalColor + new Color(brightnessBoost, brightnessBoost, brightnessBoost, 0f);
     }
 
     public void OnHoverExit()
     {
-
         objectRenderer.material.color = originalColor;
     }
 }
