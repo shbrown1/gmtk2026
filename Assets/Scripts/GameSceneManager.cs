@@ -58,8 +58,8 @@ public class GameSceneManager : MonoBehaviour
         yield return new WaitForSeconds(_blackScreenDuration);
         _overlay.SetActive(false);
 
-        AudioController.instance.PlaySound(_lightSwitchSound, 0.5f);
-        AudioController.instance.PlayBackgroundMusic(_officeAmbience, 0.5f);
+        AudioController.instance.PlaySound(_lightSwitchSound, 0.7f);
+        AudioController.instance.PlayBackgroundMusic(_officeAmbience, 0.7f);
 
         if (_vignette != null)
             StartCoroutine(AdjustVignette());
