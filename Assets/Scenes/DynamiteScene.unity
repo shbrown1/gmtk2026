@@ -409,11 +409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dynamite
   countdownTime: 30
-  wires:
-  - {fileID: 1437998892}
-  - {fileID: 1437998891}
-  - {fileID: 1437998890}
-  - {fileID: 1437998889}
 --- !u!114 &1034752859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttableWire
   color: 0
+  snippingClip: {fileID: 0}
 --- !u!114 &1437998890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttableWire
   color: 1
+  snippingClip: {fileID: 0}
 --- !u!114 &1437998891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttableWire
   color: 2
+  snippingClip: {fileID: 0}
 --- !u!114 &1437998892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttableWire
   color: 3
+  snippingClip: {fileID: 0}
 --- !u!1001 &1967389329
 PrefabInstance:
   m_ObjectHideFlags: 0
