@@ -6,7 +6,10 @@ public class BatteryFlapClickable : MonoBehaviour, IClickable
 {
     [SerializeField] private float animationTime = 0.3f;
     [SerializeField] private AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
-    [SerializeField] private Vector3 openLocalEuler = new Vector3(90f, 0f, 0f);
+    [SerializeField] private Vector3 openLocalEuler = new Vector3(160f, 0f, 0f);
+
+    public Transform battery1PlacementTransform;
+    public Transform battery2PlacementTransform;
 
     private Quaternion _closedLocalRot;
     private Quaternion _openLocalRot;
@@ -24,12 +27,12 @@ public class BatteryFlapClickable : MonoBehaviour, IClickable
     {
         if (_isAnimating) return;
 
-        RemovableObject[] removableChildren = GetComponentsInChildren<RemovableObject>()
+        Screw[] removableChildren = GetComponentsInChildren<Screw>()
             .Where(comp => comp.gameObject != this.gameObject).ToArray();
 
         if (removableChildren.Length > 0)
         {
-            foreach (RemovableObject child in removableChildren)
+            foreach (Screw child in removableChildren)
                 if (!child.IsRemoved) return;
         }
 
