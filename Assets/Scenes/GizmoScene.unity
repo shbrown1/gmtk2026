@@ -446,6 +446,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3078318787229864028, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
+      propertyPath: m_text
+      value: '20
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3859275993291007390, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
       propertyPath: m_Name
       value: ConveyorBelt
@@ -493,7 +499,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7418436045972875436, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6585287918346354904, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
 --- !u!1001 &4511351928180602332
 PrefabInstance:

@@ -4,13 +4,15 @@ using UnityEngine;
 public class TimerScript : MonoBehaviour
 {
     //mostly copied from BombCountdown, id delete but keeping in just in case for the time being.
+    [SerializeField] private float countdownDuration = 5f; 
     private TMP_Text countdownText;
     private float timeRemaining;
     private bool isTimerRunning = false;
 
-    void Start()
+    void Awake()
     {
         countdownText = GetComponentInChildren<TMP_Text>();
+        timeRemaining = countdownDuration;
     }
 
     public void Init(int seconds)
