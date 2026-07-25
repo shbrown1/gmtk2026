@@ -8,6 +8,11 @@ public class Dynamite : MonoBehaviour
     private bool isDetonated;
 
     [SerializeField] private int countdownTime = 30;
+    [SerializeField] private GameObject fireWall;
+    [SerializeField] private ParticleSystem explosion;
+    [SerializeField] private AudioClip explosionSound;
+    [SerializeField] private AudioClip fireSound;
+
 
     private readonly WireColor[] correctOrder =
     {
@@ -20,6 +25,11 @@ public class Dynamite : MonoBehaviour
     {
         timer = GetComponentInChildren<TimerScript>();
         timer.Init(countdownTime);
+    }
+
+    void Update()
+    {
+        if (timer.isDone && !isDetonated) Detonate();
     }
 
     public void OnWireCut(CuttableWire wire)
@@ -58,6 +68,10 @@ public class Dynamite : MonoBehaviour
     private void Detonate()
     {
         isDetonated = true;
-        Debug.Log("Wrong wire cut! Boom!");
+        explosion.Play();
+        fireWall.SetActive(true);
+        gameObject.SetActive(false);
+        AudioController.instance.PlaySound(fireSound);
+        AudioController.instance.PlaySound(explosionSound);
     }
 }

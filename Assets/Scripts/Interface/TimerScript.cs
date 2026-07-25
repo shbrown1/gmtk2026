@@ -7,6 +7,7 @@ public class TimerScript : MonoBehaviour
     private TMP_Text countdownText;
     private float timeRemaining;
     private bool isTimerRunning = false;
+    public bool isDone {get; private set;} = false;
 
     void Start()
     {
@@ -65,6 +66,8 @@ public class TimerScript : MonoBehaviour
 
     private void OnTimerFinish()
     {
+        isTimerRunning = false;
+        isDone = true;
         Debug.Log("TODO: Implement game over state");
     }
 }
