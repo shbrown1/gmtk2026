@@ -12,8 +12,6 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField] private Vector3 spawnOffset = Vector3.right;
     [SerializeField] private Vector3 spawnRotation;
 
-    [SerializeField] private float liftDuration = 0.5f;
-
     private List<GameObject> _pendingObjects = new List<GameObject>();
     private List<GameObject> _completedObjects = new List<GameObject>();
     private int _remainingCount;
@@ -132,6 +130,7 @@ public class ConveyorBelt : MonoBehaviour
         Quaternion liftRotStart = next.transform.localRotation;
         Quaternion liftRotEnd = Quaternion.Euler(270f, 0f, 180f);
         elapsed = 0f;
+        var liftDuration = 0.5f;
         while (elapsed < liftDuration)
         {
             elapsed += Time.deltaTime;
