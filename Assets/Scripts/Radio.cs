@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Radio : MonoBehaviour
 {
@@ -22,5 +23,7 @@ public class Radio : MonoBehaviour
         AudioController.instance.PlaySound(_loadingSound, .5f);
         yield return new WaitForSeconds(_loadingSound.length);
         AudioController.instance.PlayBackgroundMusic(radioSong);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("GizmoScene");
     }
 }

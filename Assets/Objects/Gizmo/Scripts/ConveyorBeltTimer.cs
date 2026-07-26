@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConveyorBeltTimer : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class ConveyorBeltTimer : MonoBehaviour
     private float timeRemaining;
     private bool isRunning = false;
     private MusicMixerController _musicMixerController;
-    float timeSinceLastSpeedIncrease = 0f;
+    float timeSinceLastSpeedIncrease;
 
     void Awake()
     {
@@ -22,6 +23,7 @@ public class ConveyorBeltTimer : MonoBehaviour
         DisplayTime(timeRemaining);
 
         _musicMixerController = FindAnyObjectByType<MusicMixerController>();
+        timeSinceLastSpeedIncrease = Time.time;
     }
 
     void Update()
@@ -62,6 +64,6 @@ public class ConveyorBeltTimer : MonoBehaviour
 
     private void OnTimerFinished()
     {
-        Debug.Log("Conveyor belt timer finished!");
+        SceneManager.LoadScene("Game Over Screen");
     }
 }

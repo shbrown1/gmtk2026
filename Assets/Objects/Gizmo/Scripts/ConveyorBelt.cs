@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ConveyorBelt : MonoBehaviour
 {
@@ -45,7 +46,13 @@ public class ConveyorBelt : MonoBehaviour
 
     private void OnAllGizmosCompleted()
     {
-        throw new System.NotImplementedException("All gizmos completed — end state not yet implemented.");
+        StartCoroutine(TransitionToDynamite());
+    }
+
+    private IEnumerator TransitionToDynamite()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("DynamiteScene");
     }
 
     public void GizmoCompleted(Gzimo gizmo)

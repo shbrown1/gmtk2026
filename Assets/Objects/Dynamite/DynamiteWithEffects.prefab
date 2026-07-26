@@ -361,6 +361,10 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 3296924849617772150}
+    - target: {fileID: 4922440319837810525, guid: 41589dcc71dfe27469f2cd147c0992d8, type: 3}
+      propertyPath: fastMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: dbe452e6ac928bd4ea39ee7e9ca3a6cd, type: 3}
     - target: {fileID: 7434658599282691495, guid: 41589dcc71dfe27469f2cd147c0992d8, type: 3}
       propertyPath: m_Name
       value: Dynamite
