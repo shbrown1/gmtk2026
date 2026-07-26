@@ -9,6 +9,7 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
     [SerializeField] private Vector3 openLocalEuler = new Vector3(160f, 0f, 0f);
     [SerializeField] private AudioClip openSound;
     [SerializeField] private AudioClip closeSound;
+    [SerializeField] private AudioClip shakeSound;
 
     public Transform circuitBoardPlacementTransform;
 
@@ -17,6 +18,7 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
     private bool _isOpen;
     private bool _isAnimating;
     private Coroutine _rotateRoutine;
+    private Coroutine _shakeRoutine;
 
     private void Start()
     {
@@ -33,8 +35,14 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
 
         if (removableChildren.Length > 0)
         {
-            foreach (Screw child in removableChildren)
-                if (!child.IsRemoved) return;
+            bool hasUnremovedChildren = removableChildren.Any(c => !c.IsRemoved);
+            if (hasUnremovedChildren)
+            {
+                if (_shakeRoutine != null) StopCoroutine(_shakeRoutine);
+                _shakeRoutine = StartCoroutine(Shake());
+                AudioController.instance.PlaySound(shakeSound);
+                return;
+            }
         }
 
         _isOpen = !_isOpen;
@@ -63,6 +71,25 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
 
         transform.localRotation = target;
         _isAnimating = false;
+    }
+
+    private IEnumerator Shake()
+    {
+        float duration = 0.5f;
+        float elapsed = 0f;
+
+        Quaternion startRot = _isOpen ? _openLocalRot : _closedLocalRot;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float elapsedRatio = elapsed/duration;
+            float angle = Mathf.Sin(elapsedRatio * Mathf.PI *12f) * 5f;
+            transform.localRotation = startRot * Quaternion.Euler(angle, 0f, 0f);
+            yield return null;
+        }
+
+        transform.localRotation = startRot;
+        _shakeRoutine = null;
     }
 
     public bool IsOpen => _isOpen;

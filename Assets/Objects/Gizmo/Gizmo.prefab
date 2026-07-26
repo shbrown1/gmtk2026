@@ -1197,6 +1197,7 @@ MonoBehaviour:
   openLocalEuler: {x: 0, y: 0, z: -120}
   openSound: {fileID: 8300000, guid: c71b8cf1201049045afb78ac3ce9c3f3, type: 3}
   closeSound: {fileID: 8300000, guid: de77f90c2292ba944a9909677dae3753, type: 3}
+  shakeSound: {fileID: 8300000, guid: 3e2b4139e8d0d494997563b157a2375b, type: 3}
   circuitBoardPlacementTransform: {fileID: 4625412709317567661}
 --- !u!1 &5637704344652099548
 GameObject:
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   openLocalEuler: {x: 180, y: 0, z: 0}
   openSound: {fileID: 8300000, guid: c71b8cf1201049045afb78ac3ce9c3f3, type: 3}
   closeSound: {fileID: 8300000, guid: de77f90c2292ba944a9909677dae3753, type: 3}
+  shakeSound: {fileID: 8300000, guid: 3e2b4139e8d0d494997563b157a2375b, type: 3}
   battery1PlacementTransform: {fileID: 8743015740154069822}
   battery2PlacementTransform: {fileID: 0}
 --- !u!114 &5793604036005362090
