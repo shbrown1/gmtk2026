@@ -56,7 +56,7 @@ public class Battery : MonoBehaviour, IDraggable
         if (_targetSlot == null) return;
 
         float dist = Vector3.Distance(transform.position, _targetSlot.position);
-        if (dist <= _fullAlignDistance)
+        if (dist <= _fullAlignDistance && _batteryFlap != null && _batteryFlap.IsOpen)
             StartCoroutine(InsertBattery(_targetSlot));
     }
 

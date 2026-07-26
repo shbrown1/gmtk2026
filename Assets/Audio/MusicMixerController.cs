@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class ClearAudioSpeed : MonoBehaviour
+public class MusicMixerController : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioMixer audioMixer;
