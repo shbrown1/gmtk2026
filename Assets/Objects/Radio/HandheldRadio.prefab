@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  brightnessBoost: 0.3
 --- !u!65 &7357996641612826081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  brightnessBoost: 0.3
 --- !u!114 &8345469968103140717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  brightnessBoost: 0.3
 --- !u!114 &1363198772457592914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  brightnessBoost: 0.3
 --- !u!114 &2427948058891617381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cba08d03cf3384caf062c1159f1b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaterialHighlighter
-  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  brightnessBoost: 0.3
 --- !u!1 &8793552309111802960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8161412651278964458}
+  - component: {fileID: 2473641887714953630}
   m_Layer: 0
   m_Name: HandheldRadio
   m_TagString: Untagged
@@ -1316,3 +1317,21 @@ Transform:
   - {fileID: 4460321448201305451}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2473641887714953630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793552309111802960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b8678c76d225b468220c1283530ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Radio
+  radioSong: {fileID: 8300000, guid: 8d7136994eff28a4b8ba1d5313639520, type: 3}
+  battery1: {fileID: 0}
+  battery2: {fileID: 0}
+  _loadingSound: {fileID: 8300000, guid: 86497c5adadc1ea4299fdd6226ad1c9f, type: 3}
+  cassette: {fileID: 0}
+  cassetteHolder: {fileID: 2427948058891617381}

@@ -454,17 +454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &970088030 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2427948058891617381, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-  m_PrefabInstance: {fileID: 2520657283253784699}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80ae102e0298c24ca661bf960e07cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CassetteHolderClickble
 --- !u!1001 &1322180457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -666,6 +655,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 620266329}
     m_Modifications:
+    - target: {fileID: 2473641887714953630, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      propertyPath: battery1
+      value: 
+      objectReference: {fileID: 1322180458}
+    - target: {fileID: 2473641887714953630, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      propertyPath: battery2
+      value: 
+      objectReference: {fileID: 2044453780}
+    - target: {fileID: 2473641887714953630, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      propertyPath: cassette
+      value: 
+      objectReference: {fileID: 412835845}
     - target: {fileID: 8161412651278964458, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -713,33 +714,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8793552309111802960, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2520657283253784701}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
---- !u!1 &2520657283253784700 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8793552309111802960, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
-  m_PrefabInstance: {fileID: 2520657283253784699}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2520657283253784701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2520657283253784700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b8678c76d225b468220c1283530ef6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Radio
-  radioSong: {fileID: 8300000, guid: 8d7136994eff28a4b8ba1d5313639520, type: 3}
-  battery1: {fileID: 1322180458}
-  battery2: {fileID: 2044453780}
-  cassette: {fileID: 412835845}
-  cassetteHolder: {fileID: 970088030}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

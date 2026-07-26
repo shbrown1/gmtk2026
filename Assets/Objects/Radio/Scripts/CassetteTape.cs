@@ -79,14 +79,6 @@ public class CassetteTape : MonoBehaviour, IDraggable
             transform.localPosition = Vector3.Lerp(Vector3.zero, endLocalPos, t);
             yield return null;
         }
-        StartCoroutine(PlayMusic());
-    }
-
-    private IEnumerator PlayMusic()
-    {
-        AudioController.instance.PlaySound(_loadingSound, .5f);
-        yield return new WaitForSeconds(_loadingSound.length);
-        GameSceneManager.instance.PlayMusic();
     }
 
     public bool inserted => _inserted;

@@ -7,6 +7,7 @@ public class Radio : MonoBehaviour
     [SerializeField] private AudioClip radioSong;
     [SerializeField] private Battery battery1;
     [SerializeField] private Battery battery2;
+    [SerializeField] private AudioClip _loadingSound;
     [SerializeField] private CassetteTape cassette;
     [SerializeField] private CassetteHolderClickable cassetteHolder;
 
@@ -18,7 +19,8 @@ public class Radio : MonoBehaviour
     private IEnumerator PlaySong()
     {
         musicPlaying = true;
-        yield return new WaitForSeconds(1.15f);
+        AudioController.instance.PlaySound(_loadingSound, .5f);
+        yield return new WaitForSeconds(_loadingSound.length);
         AudioController.instance.PlayBackgroundMusic(radioSong);
     }
 }

@@ -19,6 +19,6 @@ public class Gzimo : MonoBehaviour
     {
         if (!_running) return;
         _elapsed += Time.deltaTime;
-        timerDisplay.text = _elapsed.ToString("F3");
+        timerDisplay.text = _elapsed.ToString("F2");
     }
 }
