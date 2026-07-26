@@ -45,7 +45,7 @@ public class ConveyorBelt : MonoBehaviour
         }
         //sorry this is lazy I can't be bothered to do this in a smarter way
         Vector3 dynamitePos = transform.TransformPoint(spawnOrigin + spawnOffset * objectAmount);
-        GameObject dynamiteObj = Instantiate(dynamitePrefab, dynamitePos, Quaternion.identity);
+        GameObject dynamiteObj = Instantiate(dynamitePrefab, dynamitePos, Quaternion.Euler(spawnRotation));
         dynamiteObj.transform.SetParent(transform, worldPositionStays: true);
         dynamiteObj.transform.localRotation = Quaternion.Euler(spawnRotation);
 
@@ -73,7 +73,7 @@ public class ConveyorBelt : MonoBehaviour
         Quaternion rotStart = t.rotation;
         Quaternion rotEnd = Quaternion.Euler(270f, 0f, 180f);
         float elapsed = 0f;
-        float resetRotationDuration = 0.5f;
+        float resetRotationDuration = 0.2f;
         while (elapsed < resetRotationDuration)
         {
             elapsed += Time.deltaTime;
@@ -91,7 +91,7 @@ public class ConveyorBelt : MonoBehaviour
         Quaternion slideRotStart = t.rotation;
         Quaternion slideRotEnd = transform.rotation * Quaternion.Euler(spawnRotation);
         elapsed = 0f;
-        float slideIntoDuration = 0.5f;
+        float slideIntoDuration = 0.2f;
         while (elapsed < slideIntoDuration)
         {
             elapsed += Time.deltaTime;
@@ -148,7 +148,7 @@ public class ConveyorBelt : MonoBehaviour
         Quaternion liftRotStart = next.transform.localRotation;
         Quaternion liftRotEnd = Quaternion.Euler(270f, 0f, 180f);
         elapsed = 0f;
-        var liftDuration = 0.5f;
+        var liftDuration = 0.2f;
         while (elapsed < liftDuration)
         {
             elapsed += Time.deltaTime;
@@ -171,5 +171,10 @@ public class ConveyorBelt : MonoBehaviour
         Instantiate(circuitBoard);
         fresh.transform.localEulerAngles = new Vector3(270f, 0f, 180f);
         fresh.transform.localPosition = Vector3.zero;
+    }
+
+    public int GetRemainingCount()
+    {
+        return _remainingCount;
     }
 }
