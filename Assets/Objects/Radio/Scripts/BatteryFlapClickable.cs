@@ -19,6 +19,8 @@ public class BatteryFlapClickable : MonoBehaviour, IClickable
     private bool _isAnimating;
     private Coroutine _rotateRoutine;
 
+    public bool IsOpen => _isOpen;
+
     private void Start()
     {
         _closedLocalRot = transform.localRotation;
@@ -65,6 +67,4 @@ public class BatteryFlapClickable : MonoBehaviour, IClickable
         transform.localRotation = target;
         _isAnimating = false;
     }
-
-    public bool IsOpen => _isOpen;
 }

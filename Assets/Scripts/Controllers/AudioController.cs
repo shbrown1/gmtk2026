@@ -13,7 +13,7 @@ public class AudioController : MonoBehaviour
 
     public void PlaySound(AudioClip clip, float volume = 1f)
     {
-        if(clip == null)
+        if(clip is null)
             return;
 
         _soundEffectSource.PlayOneShot(clip, volume);
@@ -21,7 +21,7 @@ public class AudioController : MonoBehaviour
 
     public void PlayBackgroundMusic(AudioClip clip, float volume = 1f)
     {
-        if(clip == null)
+        if(clip is null)
             return;
 
         _backgroundMusicSource.clip = clip;

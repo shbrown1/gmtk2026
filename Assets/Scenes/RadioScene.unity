@@ -176,6 +176,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77f8e1bc4bbcbd42ab1c506a226471c, type: 3}
+--- !u!114 &412835845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1353512741401306524, guid: c77f8e1bc4bbcbd42ab1c506a226471c, type: 3}
+  m_PrefabInstance: {fileID: 412835844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129ea34d36f0b4d43a133b67a1ab6660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CassetteTape
 --- !u!1001 &450909216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +511,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+--- !u!114 &1322180458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 377279436910719328, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+  m_PrefabInstance: {fileID: 1322180457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cec8fae1c1fd84f8a54605adb72c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Battery
 --- !u!1001 &1505747906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,6 +636,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+--- !u!114 &2044453780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 377279436910719328, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+  m_PrefabInstance: {fileID: 2044453779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cec8fae1c1fd84f8a54605adb72c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Battery
 --- !u!1001 &2520657283253784699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -622,6 +655,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 620266329}
     m_Modifications:
+    - target: {fileID: 2473641887714953630, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      propertyPath: battery1
+      value: 
+      objectReference: {fileID: 1322180458}
+    - target: {fileID: 2473641887714953630, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      propertyPath: battery2
+      value: 
+      objectReference: {fileID: 2044453780}
+    - target: {fileID: 2473641887714953630, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      propertyPath: cassette
+      value: 
+      objectReference: {fileID: 412835845}
     - target: {fileID: 8161412651278964458, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

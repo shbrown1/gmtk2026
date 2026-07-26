@@ -8,6 +8,7 @@ public class CassetteTape : MonoBehaviour, IDraggable
     [SerializeField] float _insertDuration = 0.4f;
     [SerializeField] AnimationCurve _insertCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] AudioClip _insertSound;
+    [SerializeField] AudioClip _loadingSound;
 
     CassetteHolderClickable _cassetteHolder;
     Quaternion _homeRotation;
@@ -78,7 +79,7 @@ public class CassetteTape : MonoBehaviour, IDraggable
             transform.localPosition = Vector3.Lerp(Vector3.zero, endLocalPos, t);
             yield return null;
         }
-
-        GameSceneManager.instance.PlayMusic();
     }
+
+    public bool inserted => _inserted;
 }

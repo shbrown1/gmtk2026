@@ -127,6 +127,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _insertSound: {fileID: 8300000, guid: 78c11c34b800c954fb38898baf792ba9, type: 3}
+  _loadingSound: {fileID: 8300000, guid: 86497c5adadc1ea4299fdd6226ad1c9f, type: 3}
 --- !u!114 &7092704455144006307
 MonoBehaviour:
   m_ObjectHideFlags: 0

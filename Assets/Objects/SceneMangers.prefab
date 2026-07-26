@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _timerEnabled: 1
+  startingTime: 60
+  displayText: {fileID: 0}
+  startOnAwake: 1
 --- !u!1 &3146510221933547551
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +60,7 @@ GameObject:
   - component: {fileID: 667935375228206704}
   - component: {fileID: 2340347789858587850}
   - component: {fileID: 7008543578855206005}
+  - component: {fileID: 3017072348695689669}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -199,7 +203,7 @@ AudioSource:
   m_GameObject: {fileID: 3146510221933547551}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 225e7d98152d8c44da11c59b4b6c48e4, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -287,6 +291,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3017072348695689669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146510221933547551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda29d267f1a467469900b59bbf30dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearAudioSpeed
+  audioSource: {fileID: 7008543578855206005}
+  audioMixer: {fileID: 24100000, guid: 225e7d98152d8c44da11c59b4b6c48e4, type: 2}
+  targetSpeed: 1
 --- !u!1 &5944391377632868138
 GameObject:
   m_ObjectHideFlags: 0

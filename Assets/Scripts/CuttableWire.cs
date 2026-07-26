@@ -30,6 +30,7 @@ public class CuttableWire : MonoBehaviour, IClickable
     private void UpdateModel()
     {
         //update to cut wire model
+        GetComponent<Renderer>().enabled = false;
     }
 }
 
