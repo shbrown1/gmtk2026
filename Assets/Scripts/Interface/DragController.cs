@@ -4,10 +4,7 @@ public class DragController : MonoBehaviour
 {
     [SerializeField] private LayerMask fillerLayerMask = ~0;
 
-    private Camera cam;
     private IDraggable[] currentDragging;
-
-    private void Awake() => cam = Camera.main;
 
     private void Update()
     {
@@ -28,7 +25,7 @@ public class DragController : MonoBehaviour
 
     private void TryBeginDrag()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, fillerLayerMask))
         {
             IDraggable[] draggables = hit.collider.GetComponentsInParent<IDraggable>();

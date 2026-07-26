@@ -8,7 +8,8 @@ public class AudioController : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+        if(instance == null)
+            instance = this;
     }
 
     public void PlaySound(AudioClip clip, float volume = 1f)
@@ -22,6 +23,9 @@ public class AudioController : MonoBehaviour
     public void PlayBackgroundMusic(AudioClip clip, float volume = 1f)
     {
         if(clip is null)
+            return;
+
+        if (_backgroundMusicSource.clip == clip && _backgroundMusicSource.isPlaying)
             return;
 
         _backgroundMusicSource.clip = clip;

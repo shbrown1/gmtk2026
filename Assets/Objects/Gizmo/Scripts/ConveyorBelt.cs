@@ -167,8 +167,19 @@ public class ConveyorBelt : MonoBehaviour
             yield break;
         } 
 
-        Instantiate(battery);
-        Instantiate(circuitBoard);
+        var newBattery = Instantiate(battery, Vector3.up * -5f, Quaternion.Euler(-43.369f, 459.589f, -9.183f));
+        var newCircuitBoard = Instantiate(circuitBoard, Vector3.up * -5f, Quaternion.Euler(23.571f, 144.023f, -75.699f));
+        yield return null;
+        
+        var newBatteryDraggable = newBattery.GetComponent<Draggable>();
+        newBatteryDraggable.homePosition = new Vector3(1.833f, -1.877f, -3.33f);
+        newBatteryDraggable.EndDrag();
+
+        var newCircuitBoardDraggable = newCircuitBoard.GetComponent<Draggable>();
+        newCircuitBoardDraggable.homePosition = new Vector3(2.913f, -1.928f, -3.809f);
+        newCircuitBoardDraggable.EndDrag();
+
+
         fresh.transform.localEulerAngles = new Vector3(270f, 0f, 180f);
         fresh.transform.localPosition = Vector3.zero;
     }

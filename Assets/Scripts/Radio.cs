@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -16,7 +17,22 @@ public class Radio : MonoBehaviour
     void Update()
     {
         bool allScrewsInserted = FindObjectsByType<Screw>().All(s => !s.IsRemoved);
-        if (battery1.inserted && battery2.inserted && cassette.inserted && allScrewsInserted && !musicPlaying && !cassetteHolder.IsOpen) StartCoroutine(PlaySong());
+        if (battery1.inserted && battery2.inserted && cassette.inserted && allScrewsInserted && !musicPlaying && !cassetteHolder.IsOpen) 
+        {
+            StartCoroutine(RotateRadio());
+            StartCoroutine(PlaySong());
+        }
+    }
+
+    private IEnumerator RotateRadio()
+    {
+        var rotatableObject = FindAnyObjectByType<RotatableObject>();
+        yield return new WaitForSeconds(0.2f);
+        while(rotatableObject.transform.rotation != Quaternion.identity)
+        {
+            rotatableObject.transform.rotation = Quaternion.Slerp(rotatableObject.transform.rotation, Quaternion.identity, Time.deltaTime * 2f);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private IEnumerator PlaySong()
