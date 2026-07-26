@@ -568,6 +568,7 @@ MonoBehaviour:
   explosion: {fileID: 449868934}
   explosionSound: {fileID: 8300000, guid: fd1400fd3125d10448d2cb2b54e6cc1a, type: 3}
   fireSound: {fileID: 8300000, guid: 35db1408b319c234dacc2cae6d9db5db, type: 3}
+  fastMusic: {fileID: 8300000, guid: dbe452e6ac928bd4ea39ee7e9ca3a6cd, type: 3}
 --- !u!114 &1034752859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875bf831b03ee884098d7a15749e153f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerScript
+  countdownDuration: 5
 --- !u!4 &1099240558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4209731392266258, guid: a990e3ac1318b834488c784d851f42a9, type: 3}

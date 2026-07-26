@@ -14,6 +14,7 @@ public class Dynamite : MonoBehaviour
     [SerializeField] private ParticleSystem explosion;
     [SerializeField] private AudioClip explosionSound;
     [SerializeField] private AudioClip fireSound;
+    [SerializeField] private AudioClip fastMusic;
 
 
     private readonly WireColor[] correctOrder =
@@ -27,6 +28,7 @@ public class Dynamite : MonoBehaviour
     {
         timer = GetComponentInChildren<TimerScript>();
         timer.Init(countdownTime);
+        AudioController.instance.PlayBackgroundMusic(fastMusic, 0.7f);
     }
 
     void Update()
