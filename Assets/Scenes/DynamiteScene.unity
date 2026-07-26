@@ -541,6 +541,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7811183730273031965, guid: 41589dcc71dfe27469f2cd147c0992d8, type: 3}
   m_PrefabInstance: {fileID: 2242860343893805682}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &863690905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255402446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538d7a45b92ed4242906d86e59a3f8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dynamite
+  countdownTime: 30
+  fireWall: {fileID: 517768900}
+  explosion: {fileID: 449868934}
+  explosionSound: {fileID: 8300000, guid: fd1400fd3125d10448d2cb2b54e6cc1a, type: 3}
+  fireSound: {fileID: 8300000, guid: 35db1408b319c234dacc2cae6d9db5db, type: 3}
+  fastMusic: {fileID: 8300000, guid: dbe452e6ac928bd4ea39ee7e9ca3a6cd, type: 3}
+--- !u!114 &1034752859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378877364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875bf831b03ee884098d7a15749e153f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimerScript
+  countdownDuration: 5
 --- !u!4 &1099240558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4209731392266258, guid: a990e3ac1318b834488c784d851f42a9, type: 3}

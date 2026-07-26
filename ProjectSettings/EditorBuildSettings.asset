@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: c55f54c1baca91c40a8319972fc14cad
+  - enabled: 1
+    path: Assets/Scenes/Winner Screen.unity
+    guid: 3dd9b58c7e6489e43a2dae2561377dc2
+  - enabled: 1
+    path: Assets/Scenes/Game Over Screen.unity
+    guid: 51ee5117feb2bc54d98c69c80c8f0f25
+  - enabled: 1
+    path: Assets/Scenes/DynamiteScene.unity
+    guid: cd3008f6a945e5b45a6d89535a2ff28a
+  - enabled: 1
+    path: Assets/Scenes/GizmoScene.unity
+    guid: ffef48657b3f4824a920484b37cbbe64
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
