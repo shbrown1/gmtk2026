@@ -16,6 +16,8 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField] private GameObject circuitBoard;
     [SerializeField] private AudioClip musicSound;
     [SerializeField] private GameObject dynamitePrefab;
+    [SerializeField] private ConveyorBeltTimer timer;
+
 
     private List<GameObject> _pendingObjects = new List<GameObject>();
     private List<GameObject> _completedObjects = new List<GameObject>();
@@ -159,7 +161,11 @@ public class ConveyorBelt : MonoBehaviour
         Destroy(next);
         GameObject fresh = Instantiate(objectPrefab, rotatableObject);
 
-        if (_pendingObjects.Count != 0) yield break;
+        if (_pendingObjects.Count == 0)
+        {
+            timer.StopTimer();
+            yield break;
+        } 
 
         Instantiate(battery);
         Instantiate(circuitBoard);

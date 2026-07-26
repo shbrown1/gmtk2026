@@ -52,6 +52,7 @@ public class ConveyorBeltTimer : MonoBehaviour
     public void StopTimer()
     {
         isRunning = false;
+        timerText.color = Color.green;
     }
 
     private void DisplayTime(float time)

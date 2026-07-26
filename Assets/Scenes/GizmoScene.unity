@@ -176,6 +176,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3aae51b2051824fbec3e65e02df6a0, type: 3}
+--- !u!114 &208083539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7191486406520687624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
+  m_PrefabInstance: {fileID: 1508221504317576023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d04a55fd5618e7488a4ee7ad30a23f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConveyorBeltTimer
 --- !u!1 &620266327
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +458,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2384494196422697624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 208083539}
+    - target: {fileID: 2384494196422697624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
       propertyPath: battery
       value: 
       objectReference: {fileID: 8711484438595159376, guid: fa8504cac2c4c824ea171fca7bdacb9d, type: 3}
@@ -460,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 7286160477644073535, guid: bb213a56dfa9b6f478ad0750e414adcf, type: 3}
     - target: {fileID: 2384494196422697624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
       propertyPath: objectAmount
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2384494196422697624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
       propertyPath: objectPrefab
