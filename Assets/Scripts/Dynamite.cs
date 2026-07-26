@@ -10,7 +10,7 @@ public class Dynamite : MonoBehaviour
     private bool isDetonated;
 
     [SerializeField] private int countdownTime = 30;
-    [SerializeField] private GameObject fireWall;
+    private Firewall fireWall;
     [SerializeField] private ParticleSystem explosion;
     [SerializeField] private AudioClip explosionSound;
     [SerializeField] private AudioClip fireSound;
@@ -28,6 +28,7 @@ public class Dynamite : MonoBehaviour
     {
         timer = GetComponentInChildren<TimerScript>();
         timer.Init(countdownTime);
+        fireWall = FindAnyObjectByType<Firewall>(FindObjectsInactive.Include);
         AudioController.instance.PlayBackgroundMusic(fastMusic, 0.7f);
     }
 
@@ -74,7 +75,7 @@ public class Dynamite : MonoBehaviour
     {
         isDetonated = true;
         explosion.Play();
-        fireWall.SetActive(true);
+        fireWall.gameObject.SetActive(true);
         StartCoroutine(GoToGameOverScreen());
         Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>();
         foreach (Renderer renderer in renderers)
