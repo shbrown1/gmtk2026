@@ -12,13 +12,13 @@ public class Gzimo : MonoBehaviour
     public void Start()
     {
         _elapsed = 0f;
-        _running = true;
-        timerDisplay.gameObject.SetActive(true);
+        _running = false;
+        timerDisplay.gameObject.SetActive(false);
     }
 
-    public void StopElapsedTimer()
+    public void StartElapsedTimer()
     {
-        _running = false;
+        _running = true;
         timerDisplay.gameObject.SetActive(true);
     }
 
@@ -26,6 +26,6 @@ public class Gzimo : MonoBehaviour
     {
         if (!_running) return;
         _elapsed += Time.deltaTime;
-        timerDisplay.text = _elapsed.ToString("F2");
+        timerDisplay.text = _elapsed.ToString("F3");
     }
 }

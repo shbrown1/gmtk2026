@@ -66,9 +66,4 @@ public class CircuitBoardFlapClickable : MonoBehaviour, IClickable
     }
 
     public bool IsOpen => _isOpen;
-
-    public void OnCircuitBoardInserted()
-    {
-        Debug.Log("Circuit board inserted!");
-    }
 }

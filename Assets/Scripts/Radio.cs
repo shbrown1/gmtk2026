@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,8 @@ public class Radio : MonoBehaviour
 
     void Update()
     {
-        if (battery1.inserted && battery2.inserted && cassette.inserted && !musicPlaying && !cassetteHolder.IsOpen) StartCoroutine(PlaySong());
+        bool allScrewsInserted = FindObjectsByType<Screw>().All(s => !s.IsRemoved);
+        if (battery1.inserted && battery2.inserted && cassette.inserted && allScrewsInserted && !musicPlaying && !cassetteHolder.IsOpen) StartCoroutine(PlaySong());
     }
 
     private IEnumerator PlaySong()

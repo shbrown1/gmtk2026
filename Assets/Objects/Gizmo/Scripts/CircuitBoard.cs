@@ -76,8 +76,6 @@ public class CircuitBoard : MonoBehaviour, IDraggable
             transform.localScale = Vector3.Lerp(Vector3.one, new Vector3(1,1, 1.09f), t);
             yield return null;
         }
-
-        _holder.OnCircuitBoardInserted();
     }
 
     public bool IsInserted => _inserted;
