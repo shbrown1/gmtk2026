@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dynamite : MonoBehaviour
 {
@@ -63,6 +65,7 @@ public class Dynamite : MonoBehaviour
     {
         isDefused = true;
         timer.DefuseBomb();
+        StartCoroutine(GoToWinScreen());
     }
 
     private void Detonate()
@@ -70,8 +73,26 @@ public class Dynamite : MonoBehaviour
         isDetonated = true;
         explosion.Play();
         fireWall.SetActive(true);
-        gameObject.SetActive(false);
+        StartCoroutine(GoToGameOverScreen());
+        Renderer[] renderers = gameObject.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.enabled = false;
+        }
         AudioController.instance.PlaySound(fireSound);
         AudioController.instance.PlaySound(explosionSound);
+    }
+
+    private IEnumerator GoToGameOverScreen()
+    {
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Should go to game over screen");
+        SceneManager.LoadScene("Game Over Screen");
+    }
+
+    private IEnumerator GoToWinScreen()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Winner Screen");
     }
 }
