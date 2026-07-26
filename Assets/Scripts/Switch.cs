@@ -18,19 +18,19 @@ public class Switch : MonoBehaviour, IClickable
     private bool _isAnimating;
     private Coroutine _rotateRoutine;
 
-    private bool canTurnOn
-    {
-        get
-        {
-            var batteryFlap = FindAnyObjectByType<BatteryFlapClickable>();
-            var circuitBoard = FindAnyObjectByType<CircuitBoard>();
-            var screws = FindObjectsByType<Screw>();
+    private bool canTurnOn => true;
+///    {
+        ///get
+        ///{
+            ///var batteryFlap = FindAnyObjectByType<BatteryFlapClickable>();
+            ///var circuitBoard = FindAnyObjectByType<CircuitBoard>();
+            ///var screws = FindObjectsByType<Screw>();
 
-            return circuitBoard != null && circuitBoard.IsInserted &&
-                   batteryFlap != null && batteryFlap.battery1PlacementTransform == null && batteryFlap.battery2PlacementTransform == null &&
-                   screws.All(s => !s.IsRemoved);
-        }
-    }
+            ///return circuitBoard != null && circuitBoard.IsInserted &&
+                   ///batteryFlap != null && batteryFlap.battery1PlacementTransform == null && batteryFlap.battery2PlacementTransform == null &&
+                   ///screws.All(s => !s.IsRemoved);
+        ///}
+    ///}
 
     private void Awake()
     {
@@ -51,6 +51,10 @@ public class Switch : MonoBehaviour, IClickable
                 isOn = true;
                 _rotateRoutine = StartCoroutine(RotateTo(_onLocalRot, rotationCurve, animationTime));
                 GetComponentInParent<Gzimo>()?.StartElapsedTimer();
+                var gizmo = GetComponentInParent<Gzimo>();
+                foreach (var col in gizmo.GetComponentsInChildren<Collider>())
+                    Destroy(col);
+                FindAnyObjectByType<ConveyorBelt>()?.GizmoCompleted(gizmo);
             }
             else
             {
