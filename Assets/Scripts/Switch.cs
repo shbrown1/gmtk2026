@@ -50,6 +50,7 @@ public class Switch : MonoBehaviour, IClickable
             {
                 isOn = true;
                 _rotateRoutine = StartCoroutine(RotateTo(_onLocalRot, rotationCurve, animationTime));
+                GetComponentInParent<Gzimo>()?.StartElapsedTimer();
             }
             else
             {
