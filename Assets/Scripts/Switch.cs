@@ -22,9 +22,10 @@ public class Switch : MonoBehaviour, IClickable
     {
         get
         {
-            var batteryFlap = FindAnyObjectByType<BatteryFlapClickable>();
-            var circuitBoard = FindAnyObjectByType<CircuitBoard>();
-            var screws = FindObjectsByType<Screw>();
+            var Gizmo = GetComponentInParent<Gzimo>();
+            var batteryFlap = Gizmo.GetComponentInChildren<BatteryFlapClickable>();
+            var circuitBoard = Gizmo.GetComponentInChildren<CircuitBoard>();
+            var screws = Gizmo.GetComponentsInChildren<Screw>();
 
             return circuitBoard != null && circuitBoard.IsInserted &&
                    batteryFlap != null && batteryFlap.battery1PlacementTransform == null && batteryFlap.battery2PlacementTransform == null &&
