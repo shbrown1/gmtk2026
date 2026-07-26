@@ -152,6 +152,7 @@ MonoBehaviour:
   _lightSwitchSound: {fileID: 8300000, guid: c67403d5596dcca4ba7fc4748b40fd6b, type: 3}
   _officeAmbience: {fileID: 8300000, guid: cab4bcb2a2af7b949ab24be097b88e2d, type: 3}
   _music: {fileID: 8300000, guid: d849b49a4f777b74ca7f12197b86d599, type: 3}
+  _overlayMaterial: {fileID: 2100000, guid: e38c7f083aff9834d947da9e884892cd, type: 2}
 --- !u!4 &130514769
 Transform:
   m_ObjectHideFlags: 0

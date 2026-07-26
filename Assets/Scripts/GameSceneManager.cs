@@ -12,6 +12,7 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] AudioClip _officeAmbience;
     [SerializeField] AudioClip _music;
 
+    [SerializeField] private Material _overlayMaterial;
     Camera _cam;
     GameObject _overlay;
     Vignette _vignette;
@@ -53,9 +54,7 @@ public class GameSceneManager : MonoBehaviour
         _overlay.transform.localRotation = Quaternion.identity;
         _overlay.transform.localScale = new Vector3(w, h, 1f);
 
-        var mat = new Material(Shader.Find("Unlit/Color"));
-        mat.color = Color.black;
-        _overlay.GetComponent<Renderer>().material = mat;
+        _overlay.GetComponent<Renderer>().material = _overlayMaterial;
     }
 
     IEnumerator RevealAfterDelay()
