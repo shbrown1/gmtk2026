@@ -15,6 +15,7 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField] private GameObject battery;
     [SerializeField] private GameObject circuitBoard;
     [SerializeField] private AudioClip musicSound;
+    [SerializeField] private GameObject dynamitePrefab;
 
     private List<GameObject> _pendingObjects = new List<GameObject>();
     private List<GameObject> _completedObjects = new List<GameObject>();
@@ -40,19 +41,21 @@ public class ConveyorBelt : MonoBehaviour
 
             _pendingObjects.Add(obj);
         }
+        //sorry this is lazy I can't be bothered to do this in a smarter way
+        Vector3 dynamitePos = transform.TransformPoint(spawnOrigin + spawnOffset * objectAmount);
+        GameObject dynamiteObj = Instantiate(dynamitePrefab, dynamitePos, Quaternion.identity);
+        dynamiteObj.transform.SetParent(transform, worldPositionStays: true);
+        dynamiteObj.transform.localRotation = Quaternion.Euler(spawnRotation);
+
+        foreach (var col in dynamiteObj.GetComponentsInChildren<Collider>())
+            Destroy(col);
+
+        foreach (var mono in dynamiteObj.GetComponentsInChildren<MonoBehaviour>())
+            Destroy(mono);
+
+        _pendingObjects.Add(dynamiteObj);
 
         AudioController.instance.PlayBackgroundMusic(musicSound, 0.7f);
-    }
-
-    private void OnAllGizmosCompleted()
-    {
-        StartCoroutine(TransitionToDynamite());
-    }
-
-    private IEnumerator TransitionToDynamite()
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("DynamiteScene");
     }
 
     public void GizmoCompleted(Gzimo gizmo)
@@ -125,11 +128,11 @@ public class ConveyorBelt : MonoBehaviour
             allObjects[i].transform.position = advanceStarts[i] + worldOffset;
 
         // Grab the next unworked object
-        if (_pendingObjects.Count == 0)
+        if (_pendingObjects.Count == 1)
         {
             
-            OnAllGizmosCompleted();
-            yield break;
+            objectPrefab = dynamitePrefab;
+            //yield break;
         }
         GameObject next = _pendingObjects[0];
         _pendingObjects.RemoveAt(0);
@@ -154,8 +157,10 @@ public class ConveyorBelt : MonoBehaviour
         }
 
         Destroy(next);
-
         GameObject fresh = Instantiate(objectPrefab, rotatableObject);
+
+        if (_pendingObjects.Count != 0) yield break;
+
         Instantiate(battery);
         Instantiate(circuitBoard);
         fresh.transform.localEulerAngles = new Vector3(270f, 0f, 180f);

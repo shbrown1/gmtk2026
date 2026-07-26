@@ -491,6 +491,10 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2384494196422697624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
+      propertyPath: dynamitePrefab
+      value: 
+      objectReference: {fileID: 1542222981701146775, guid: c2e7912781ad6c34cbbcc7451c8f566e, type: 3}
+    - target: {fileID: 2384494196422697624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
       propertyPath: spawnRotation.z
       value: 180
       objectReference: {fileID: 0}
@@ -540,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7191486406520687624, guid: 0a932f0e799032e4c9432f76047b4c95, type: 3}
       propertyPath: seconds
-      value: 150
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
