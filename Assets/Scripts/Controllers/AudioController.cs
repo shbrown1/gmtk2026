@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioController : MonoBehaviour
 {
@@ -10,6 +11,18 @@ public class AudioController : MonoBehaviour
     {
         if(instance == null)
             instance = this;
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StopSoundEffects();
     }
 
     public void PlaySound(AudioClip clip, float volume = 1f)
@@ -38,6 +51,10 @@ public class AudioController : MonoBehaviour
     {
         _backgroundMusicSource.Stop();
         _backgroundMusicSource.clip = null;
-        
+    }
+
+    public void StopSoundEffects()
+    {
+        _soundEffectSource.Stop();
     }
 }
