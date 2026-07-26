@@ -11,6 +11,8 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField] private Vector3 spawnOrigin;
     [SerializeField] private Vector3 spawnOffset = Vector3.right;
     [SerializeField] private Vector3 spawnRotation;
+    [SerializeField] private GameObject battery;
+    [SerializeField] private GameObject circuitBoard;
 
     private List<GameObject> _pendingObjects = new List<GameObject>();
     private List<GameObject> _completedObjects = new List<GameObject>();
@@ -143,6 +145,8 @@ public class ConveyorBelt : MonoBehaviour
         Destroy(next);
 
         GameObject fresh = Instantiate(objectPrefab, rotatableObject);
+        Instantiate(battery);
+        Instantiate(circuitBoard);
         fresh.transform.localEulerAngles = new Vector3(270f, 0f, 180f);
         fresh.transform.localPosition = Vector3.zero;
     }
