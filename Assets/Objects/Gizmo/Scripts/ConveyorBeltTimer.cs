@@ -7,6 +7,8 @@ public class ConveyorBeltTimer : MonoBehaviour
     private TMP_Text timerText;
     private float timeRemaining;
     private bool isRunning = false;
+    private MusicMixerController _musicMixerController;
+    float timeSinceLastSpeedIncrease = 0f;
 
     void Awake()
     {
@@ -18,6 +20,8 @@ public class ConveyorBeltTimer : MonoBehaviour
     {
         isRunning = true;
         DisplayTime(timeRemaining);
+
+        _musicMixerController = FindAnyObjectByType<MusicMixerController>();
     }
 
     void Update()
@@ -28,6 +32,11 @@ public class ConveyorBeltTimer : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             DisplayTime(timeRemaining);
+            if (timeRemaining != seconds && (Time.time - timeSinceLastSpeedIncrease) >= 30f)
+            {
+                _musicMixerController.SetTargetSpeed(_musicMixerController.targetSpeed + 0.2f);
+                timeSinceLastSpeedIncrease = Time.time;
+            }
         }
         else
         {

@@ -13,6 +13,7 @@ public class ConveyorBelt : MonoBehaviour
     [SerializeField] private Vector3 spawnRotation;
     [SerializeField] private GameObject battery;
     [SerializeField] private GameObject circuitBoard;
+    [SerializeField] private AudioClip musicSound;
 
     private List<GameObject> _pendingObjects = new List<GameObject>();
     private List<GameObject> _completedObjects = new List<GameObject>();
@@ -38,6 +39,8 @@ public class ConveyorBelt : MonoBehaviour
 
             _pendingObjects.Add(obj);
         }
+
+        AudioController.instance.PlayBackgroundMusic(musicSound, 0.7f);
     }
 
     private void OnAllGizmosCompleted()
@@ -117,6 +120,7 @@ public class ConveyorBelt : MonoBehaviour
         // Grab the next unworked object
         if (_pendingObjects.Count == 0)
         {
+            
             OnAllGizmosCompleted();
             yield break;
         }

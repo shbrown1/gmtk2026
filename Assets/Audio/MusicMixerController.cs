@@ -19,4 +19,9 @@ public class MusicMixerController : MonoBehaviour
         float pitchInversion = 1f / targetSpeed;
         audioMixer.SetFloat("Pitch", pitchInversion);
     }
+
+    public void SetTargetSpeed(float speed)
+    {
+        targetSpeed = speed;
+    }
 }

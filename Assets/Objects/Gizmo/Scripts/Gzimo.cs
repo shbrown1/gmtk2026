@@ -8,10 +8,17 @@ public class Gzimo : MonoBehaviour
     private float _elapsed;
     private bool _running;
 
-    public void StartElapsedTimer()
+
+    public void Start()
     {
         _elapsed = 0f;
         _running = true;
+        timerDisplay.gameObject.SetActive(true);
+    }
+
+    public void StopElapsedTimer()
+    {
+        _running = false;
         timerDisplay.gameObject.SetActive(true);
     }
 

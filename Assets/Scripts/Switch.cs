@@ -50,7 +50,7 @@ public class Switch : MonoBehaviour, IClickable
             {
                 isOn = true;
                 _rotateRoutine = StartCoroutine(RotateTo(_onLocalRot, rotationCurve, animationTime));
-                GetComponentInParent<Gzimo>()?.StartElapsedTimer();
+                GetComponentInParent<Gzimo>()?.StopElapsedTimer();
                 var gizmo = GetComponentInParent<Gzimo>();
                 foreach (var col in gizmo.GetComponentsInChildren<Collider>())
                     Destroy(col);
