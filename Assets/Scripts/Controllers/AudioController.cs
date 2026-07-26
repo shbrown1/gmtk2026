@@ -29,4 +29,11 @@ public class AudioController : MonoBehaviour
         _backgroundMusicSource.loop = true;
         _backgroundMusicSource.Play();
     }
+
+    public void StopBackgroundMusic()
+    {
+        _backgroundMusicSource.Stop();
+        _backgroundMusicSource.clip = null;
+        
+    }
 }

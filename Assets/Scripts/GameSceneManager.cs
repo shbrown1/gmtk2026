@@ -5,9 +5,12 @@ using UnityEngine.Rendering.Universal;
 
 public class GameSceneManager : MonoBehaviour
 {
+
+    public static GameSceneManager instance;
     [SerializeField] float _blackScreenDuration = 2f;
     [SerializeField] AudioClip _lightSwitchSound;
     [SerializeField] AudioClip _officeAmbience;
+    [SerializeField] AudioClip _music;
 
     Camera _cam;
     GameObject _overlay;
@@ -16,6 +19,7 @@ public class GameSceneManager : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         _cam = Camera.main;
         CreateOverlay();
 
@@ -29,9 +33,10 @@ public class GameSceneManager : MonoBehaviour
         StartCoroutine(RevealAfterDelay());
     }
 
-    void Update()
+    public void PlayMusic()
     {
-
+        AudioController.instance.StopBackgroundMusic();
+        AudioController.instance.PlayBackgroundMusic(_music, 0.7f);
     }
 
     void CreateOverlay()
