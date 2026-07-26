@@ -176,6 +176,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77f8e1bc4bbcbd42ab1c506a226471c, type: 3}
+--- !u!114 &412835845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1353512741401306524, guid: c77f8e1bc4bbcbd42ab1c506a226471c, type: 3}
+  m_PrefabInstance: {fileID: 412835844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129ea34d36f0b4d43a133b67a1ab6660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CassetteTape
 --- !u!1001 &450909216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -443,6 +454,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970088030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2427948058891617381, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+  m_PrefabInstance: {fileID: 2520657283253784699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80ae102e0298c24ca661bf960e07cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CassetteHolderClickble
 --- !u!1001 &1322180457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +522,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+--- !u!114 &1322180458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 377279436910719328, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+  m_PrefabInstance: {fileID: 1322180457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cec8fae1c1fd84f8a54605adb72c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Battery
 --- !u!1001 &1505747906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,6 +647,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+--- !u!114 &2044453780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 377279436910719328, guid: 2ec3f7adcc381f54c913703f57695d95, type: 3}
+  m_PrefabInstance: {fileID: 2044453779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cec8fae1c1fd84f8a54605adb72c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Battery
 --- !u!1001 &2520657283253784699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,8 +713,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8793552309111802960, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2520657283253784701}
   m_SourcePrefab: {fileID: 100100000, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+--- !u!1 &2520657283253784700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8793552309111802960, guid: b6f74107c76c885488f47c52c54f90c8, type: 3}
+  m_PrefabInstance: {fileID: 2520657283253784699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2520657283253784701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2520657283253784700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b8678c76d225b468220c1283530ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Radio
+  radioSong: {fileID: 8300000, guid: 8d7136994eff28a4b8ba1d5313639520, type: 3}
+  battery1: {fileID: 1322180458}
+  battery2: {fileID: 2044453780}
+  cassette: {fileID: 412835845}
+  cassetteHolder: {fileID: 970088030}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

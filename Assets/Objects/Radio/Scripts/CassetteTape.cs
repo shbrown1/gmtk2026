@@ -88,4 +88,6 @@ public class CassetteTape : MonoBehaviour, IDraggable
         yield return new WaitForSeconds(_loadingSound.length);
         GameSceneManager.instance.PlayMusic();
     }
+
+    public bool inserted => _inserted;
 }

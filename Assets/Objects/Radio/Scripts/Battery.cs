@@ -102,4 +102,6 @@ public class Battery : MonoBehaviour, IDraggable
         float d2 = Vector3.Distance(transform.position, s2.position);
         return d1 <= d2 ? s1 : s2;
     }
+
+    public bool inserted => _inserted;
 }
