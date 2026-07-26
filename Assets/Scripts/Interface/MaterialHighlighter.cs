@@ -21,6 +21,7 @@ public class MaterialHighlighter : MonoBehaviour, IHoverable
 
     public void OnHoverExit()
     {
+        if (objectRenderer != null)
         objectRenderer.material.color = originalColor;
     }
 }

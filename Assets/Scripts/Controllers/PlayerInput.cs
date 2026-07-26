@@ -21,7 +21,7 @@ public class PlayerInput : MonoBehaviour
 
             if (hoverObj != currentHover)
             {
-                if (currentHover != null) currentHover.OnHoverExit();
+                if (currentHover as UnityEngine.Object != null) currentHover.OnHoverExit();
                 currentHover = hoverObj;
                 if (currentHover != null) currentHover.OnHoverEnter();
             }
@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour
                 clickObj?.OnClick();
             }
         }
-        else if (currentHover != null)
+        else if (currentHover as UnityEngine.Object != null)
         {
             currentHover.OnHoverExit();
             currentHover = null;

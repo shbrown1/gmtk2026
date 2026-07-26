@@ -70,6 +70,9 @@ public class ConveyorBelt : MonoBehaviour
         _remainingCount--;
         if (objectAmountText != null) objectAmountText.text = _remainingCount.ToString();
 
+        if (_remainingCount== 0)
+            timer.StopTimer();
+
         Quaternion rotStart = t.rotation;
         Quaternion rotEnd = Quaternion.Euler(270f, 0f, 180f);
         float elapsed = 0f;
@@ -162,10 +165,7 @@ public class ConveyorBelt : MonoBehaviour
         GameObject fresh = Instantiate(objectPrefab, rotatableObject);
 
         if (_pendingObjects.Count == 0)
-        {
-            timer.StopTimer();
             yield break;
-        } 
 
         var newBattery = Instantiate(battery, Vector3.up * -5f, Quaternion.Euler(-43.369f, 459.589f, -9.183f));
         var newCircuitBoard = Instantiate(circuitBoard, Vector3.up * -5f, Quaternion.Euler(23.571f, 144.023f, -75.699f));
